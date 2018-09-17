@@ -64,9 +64,10 @@ void My_InitTask(void)
 	
 	//PA09 PA10 UART1 protocol
 	USART1_init();
-	
+	//printf("串口启动...");
+	usart1_send_str("串口启动...");
 	//PC10 PC11 UART4
-	UART4_Init(115200);
+	//UART4_Init(115200);
 	
 	//SYSTICK
 	SYSTICK_init();
@@ -75,19 +76,19 @@ void My_InitTask(void)
 	lcd_init();
 
 	//add timer2(10ms)
-	TIM2_Init();
+	//TIM2_Init();
 
 	//keyboard init
-	kbd_init();
+	//kbd_init();
 	
 	//ADC1 INIT
-	ADC1_init(adc_update_notify);
+	//ADC1_init(adc_update_notify);
 
 	//LF init
-	LF125K_init();
+	//LF125K_init();
 
 	//i2c eeprom
-	sEE_Init();
+	//sEE_Init();
 
 	//rtc init
 	rtc_init(rtc_update_notify);
@@ -95,9 +96,9 @@ void My_InitTask(void)
 	//buzzer
 	buzzerInit();
 	//servo
-	TIM3_pwm_init();
-	TIM3_CH1_set_servo_degree(90);
-	TIM3_CH2_set_servo_degree(90);
+	//TIM3_pwm_init();
+	//TIM3_CH1_set_servo_degree(90);
+	//TIM3_CH2_set_servo_degree(90);
 	
 	//TIM3 input capture
 	//TIM4_ch3_input_capture_ultrasonic_init(ultrasonic_update_notify);

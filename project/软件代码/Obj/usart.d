@@ -29,6 +29,9 @@
 .\obj\usart.o: ..\..\Libraries\inc\stm32f10x_wwdg.h
 .\obj\usart.o: ..\..\Libraries\inc\misc.h
 .\obj\usart.o: D:\Keli\ARM\ARMCC\Bin\..\include\stdio.h
+.\obj\usart.o: D:\Keli\ARM\ARMCC\Bin\..\include\stdlib.h
 .\obj\usart.o: D:\Keli\ARM\ARMCC\Bin\..\include\stdarg.h
 .\obj\usart.o: D:\Keli\ARM\ARMCC\Bin\..\include\string.h
 .\obj\usart.o: code\Drv\USART\usart.h
+.\obj\usart.o: .\code\Drv\TIM\PWM_Output\pwm_output.h
+.\obj\usart.o: .\code\Drv\Door\door.h
