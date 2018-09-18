@@ -6,6 +6,7 @@
 #include "ultrasonic.h"
 #include "segled_16bit.h"
 #include "timer.h"
+#include "usart.h"
 //#include "buzzer.h"
 
 extern const int32_t mems_alert_timeout;  //300ms
@@ -77,7 +78,7 @@ void TIM2_test_GPIO_cfg(void)
 	GPIO_Init(GPIOB,&GPIO_InitStructure);
 }
 
-int TIM2_init(void)
+void TIM2_init(void)
 {
 	#if 0
 	TIM2_test_GPIO_cfg();
@@ -91,8 +92,6 @@ int TIM2_init(void)
 	
 	//开启定时器2
 	TIM_Cmd(TIM2,ENABLE);
-	
-	return 0;
 }
 
 
@@ -102,12 +101,14 @@ int TIM2_init(void)
 void TIM2_IRQHandler(void)
 {
 	static int32_t count = 0;
+	unsigned char usart_data_buf[128];
 //	static uint8_t data = 0;
 //	static uint16_t buzzerPrescaler = 0;
 	
    //检测是否发生溢出更新事件
    if(TIM_GetITStatus(TIM2, TIM_IT_Update) != RESET)
    {
+	   /*
       count++;
 	  if(count >= adc_sample_rate * mems_alert_timeout * kbd_scan_tm * ledseg_refresh_tm)
 	  	count = 0;
@@ -126,138 +127,18 @@ void TIM2_IRQHandler(void)
 	  if(count % mems_alert_timeout == 0){
 		if(MEMS_ALERT < MEMS_ALERT_TRIGER)
 			MEMS_ALERT = 0;
-	  }
+	  }*/
+	  
+	  if(usart1_rx_fifo_len() > 43){
+			usart1_get_str(usart_data_buf);
+			printf("接收到的数据:%s\r\n",usart_data_buf);
+			usart_data_analysis_process((char *)usart_data_buf);
+			usart1_rx_fifo_clean();
+		}
 
-	  if(count % ledseg_refresh_tm == 0){
-	  	refresh_segleds();
-	  }
-
-#if 0
-
-      //将PB.5管脚输出数值写入ReadValue
-      ReadValue = GPIO_ReadOutputDataBit(GPIOB, GPIO_Pin_5);
-
-      if(ReadValue == 0)
-      {
-         GPIO_SetBits(GPIOB,GPIO_Pin_5);
-      }    
-      else
-      {
-         GPIO_ResetBits(GPIOB,GPIO_Pin_5);      
-      }
-#endif
-	  //printf("timeout");
+	  //if(count % ledseg_refresh_tm == 0){
+	  //	refresh_segleds();
+	  // }
    }
 }
-
-
-
-
-
-/*
-void RCC_cfg()
-{
-
-      
-
-       //定义错误状态变量
-
-       ErrorStatus HSEStartUpStatus;
-
-      
-
-       //将RCC寄存器重新设置为默认值
-
-       RCC_DeInit();
-
- 
-
-       //打开外部高速时钟晶振
-
-       RCC_HSEConfig(RCC_HSE_ON);
-
- 
-
-       //等待外部高速时钟晶振工作
-
-       HSEStartUpStatus = RCC_WaitForHSEStartUp();
-
-       if(HSEStartUpStatus == SUCCESS)
-
-       {
-
-              //设置AHB时钟(HCLK)为系统时钟
-
-              RCC_HCLKConfig(RCC_SYSCLK_Div1);
-
- 
-
-              //设置高速AHB时钟(APB2)为HCLK时钟
-
-              RCC_PCLK2Config(RCC_HCLK_Div1);
-
- 
-
-              //设置低速AHB时钟(APB1)为HCLK的2分频
-
-              RCC_PCLK1Config(RCC_HCLK_Div2);
-
-             
-
-              //设置FLASH代码延时
-
-              FLASH_SetLatency(FLASH_Latency_2);
-
- 
-
-              //使能预取指缓存
-
-              FLASH_PrefetchBufferCmd(FLASH_PrefetchBuffer_Enable);
-
- 
-
-              //设置PLL时钟，为HSE的9倍频 8MHz * 9 = 72MHz
-
-              RCC_PLLConfig(RCC_PLLSource_HSE_Div1, RCC_PLLMul_9);
-
- 
-
-              //使能PLL
-
-              RCC_PLLCmd(ENABLE);
-
- 
-
-              //等待PLL准备就绪
-
-              while(RCC_GetFlagStatus(RCC_FLAG_PLLRDY) == RESET);
-
- 
-
-              //设置PLL为系统时钟源
-
-              RCC_SYSCLKConfig(RCC_SYSCLKSource_PLLCLK);
-
- 
-
-              //判断PLL是否是系统时钟
-
-              while(RCC_GetSYSCLKSource() != 0x08);
-
-       }
-
- 
-
-       //允许TIM2的时钟
-
-       RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2,ENABLE);
-
-       //允许GPIO的时钟
-
-       RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB,ENABLE);
-
- 
-
-}
-*/
 

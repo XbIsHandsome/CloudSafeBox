@@ -1,17 +1,10 @@
-#include "stm32f10x.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
-#include <string.h>
 #include "usart.h"
-#include "pwm_output.h"
-#include "door.h"
 
 unsigned char usart1_rx_fifo_buf[USART1_FIFO_BUF_SIZE-1];
 unsigned int usart1_rx_fifo_buf_in = 0;
 unsigned int usart1_rx_fifo_buf_out = 0;
 extern unsigned char isAlert;//报警标志
-extern unsigned char FlagDefense;//防御标志，1-布防，0-撤防
+extern uint8_t MEMS_ALERT;
 
 /* ==================================================================
 #     函数介绍: 串口1时钟初始化函数									#
@@ -150,9 +143,7 @@ void usart1_rx_fifo_clean(void)
 {
 	if(!usart1_rx_fifo_is_empty())
 	{
-		usart1_rx_fifo_buf_out = 0;
-		usart1_rx_fifo_buf_in = 0;
-		memset(usart1_rx_fifo_buf, 0, sizeof(usart1_rx_fifo_buf));
+		usart1_rx_fifo_buf_out = usart1_rx_fifo_buf_in ;
 	}
 }
 
@@ -279,7 +270,12 @@ char *get_json_value(char *cJson, char *Tag)
 	memset(temp, 0x00, 128);
 	for(i=0; i<10; i++, target++)//数值超过10个位为非法，由于2^32=4294967296
 	{
+		if(*target == '\"')
+		{
+			break;
+		}
 		temp[i]=*target;
+		
 	}
 	temp[i+1] = '\0';
 	printf("数值=%s\r\n",temp);
@@ -300,29 +296,29 @@ void usart_data_analysis_process(char *RxBuf)
 	char *servo_degree = NULL;
 	uint8_t TxetBuf[128];
 	
-	char* cmdtag = NULL;
-	char* data = NULL;
-	
 	if(strstr((const char *)RxBuf, (const char *)"\"t\":5") != NULL)//命令请求？
 	{
-		if(cmdtag != NULL && data != NULL)
-		{
-			if(strstr(cmdtag, (const char *)"\"cmdtag\":\"defense\"") != NULL)//布防/撤防请求
+			if(strstr((const char *)RxBuf, (const char *)"\"cmdtag\":\"defense\"") != NULL)//布防/撤防请求
 			{
 				memset(TxetBuf,0x00,128);//清空缓存
-				if((strstr((const char *)RxBuf, (const char *)"\"data\":1") != NULL))
+				if((strstr((const char *)RxBuf, (const char *)"\"data\":\"1\"") != NULL))
 				{
 					FlagDefense=1;
 				}
 				else
 				{
+					usart1_send_str("撤防\r\n");
 					FlagDefense=0;
+					buzzerClose();
+					lightClose();
+					lcd_clr_row(2);
+					lcd_clr_row(3);
 				}
 			}
 			else if(strstr((const char *)RxBuf, (const char *)"\"cmdtag\":\"ctrl\"") != NULL)//开锁/关锁请求
 			{
 				memset(TxetBuf,0x00,128);//清空缓存
-				if((strstr((const char *)RxBuf, (const char *)"\"data\":1") != NULL))//开锁
+				if((strstr((const char *)RxBuf, (const char *)"\"data\":\"1\"") != NULL))//开锁
 				{
 					isAlert=0;//清除警告
 					doorOpen();
@@ -343,7 +339,7 @@ void usart_data_analysis_process(char *RxBuf)
 				servo_degree = get_json_value((char *)RxBuf, (char *)"data");
 				TIM3_CH2_set_servo_degree(atoi(servo_degree));
 			}
-		}
+		
 	}
 }
 

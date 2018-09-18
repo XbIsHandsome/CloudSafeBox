@@ -56,3 +56,6 @@
 .\obj\main.o: .\code\Drv\ADC_NumCal\numcal.h
 .\obj\main.o: D:\Keli\ARM\ARMCC\Bin\..\include\math.h
 .\obj\main.o: .\code\Drv\USART\usart.h
+.\obj\main.o: D:\Keli\ARM\ARMCC\Bin\..\include\stdarg.h
+.\obj\main.o: .\code\Drv\SegLED\light.h
+.\obj\main.o: .\code\Drv\TIM\timer\timer.h

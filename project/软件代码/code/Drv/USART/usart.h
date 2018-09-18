@@ -1,6 +1,16 @@
 #ifndef USART_H
 #define USART_H
 
+#include "stm32f10x.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include <string.h>
+#include "pwm_output.h"
+#include "door.h"
+#include "buzzer.h"
+#include "LCD12864.h"
+#include "light.h"
 
 #define USART1_FIFO_BUF_SIZE			256 //it must be pow(2, x) result 
 #define USART1_FIFO_BUF_SIZE_MASK		(USART1_FIFO_BUF_SIZE-1)

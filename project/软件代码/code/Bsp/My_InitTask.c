@@ -13,7 +13,7 @@
 #include "rtc.h"
 #include "SegLed_16bit.h"
 #include "buzzer.h"
-#include "hal_timer2.h"
+#include "timer.h"
 #include "hal_uart4.h"
 #include "WiFiToCloud.h"
 

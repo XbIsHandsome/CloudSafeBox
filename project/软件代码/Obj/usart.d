@@ -1,4 +1,5 @@
 .\obj\usart.o: code\Drv\USART\usart.c
+.\obj\usart.o: code\Drv\USART\usart.h
 .\obj\usart.o: ..\..\Libraries\stm32f10x.h
 .\obj\usart.o: ..\..\Libraries\core_cm3.h
 .\obj\usart.o: D:\Keli\ARM\ARMCC\Bin\..\include\stdint.h
@@ -32,6 +33,8 @@
 .\obj\usart.o: D:\Keli\ARM\ARMCC\Bin\..\include\stdlib.h
 .\obj\usart.o: D:\Keli\ARM\ARMCC\Bin\..\include\stdarg.h
 .\obj\usart.o: D:\Keli\ARM\ARMCC\Bin\..\include\string.h
-.\obj\usart.o: code\Drv\USART\usart.h
 .\obj\usart.o: .\code\Drv\TIM\PWM_Output\pwm_output.h
 .\obj\usart.o: .\code\Drv\Door\door.h
+.\obj\usart.o: .\code\Drv\Buzzer\buzzer.h
+.\obj\usart.o: .\code\Drv\LCD12864\LCD12864.h
+.\obj\usart.o: .\code\Drv\SegLED\light.h
