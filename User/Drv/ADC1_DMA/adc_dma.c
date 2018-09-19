@@ -90,3 +90,8 @@ void update_adc1(void)
 {
     ADC_SoftwareStartConvCmd(ADC1, ENABLE);
 }
+
+u16 get_adc_result(void)
+{
+    return ADC_ConvertedValue;
+}

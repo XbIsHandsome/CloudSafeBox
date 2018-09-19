@@ -6,12 +6,6 @@
 #include "systick.h"
 #include "adc_dma.h"
 
-// ADC1转换的电压值通过MDA方式传到SRAM
-extern __IO uint16_t ADC_ConvertedValue;
-
-// 局部变量，用于保存转换计算后的电压值
-float ADC_ConvertedValueLocal;
-
 int task_init(void)
 {
     // LED灯的初始化 PC13

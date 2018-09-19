@@ -7,5 +7,6 @@
 
 void ADC1_Init(void);
 void update_adc1(void);
+u16 get_adc_result(void);
 
 #endif

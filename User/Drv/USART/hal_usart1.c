@@ -1,8 +1,6 @@
 #include "hal_usart1.h"
 #include "adc_dma.h"
-
-// ADC1转换的电压值通过MDA方式传到SRAM
-extern __IO uint16_t ADC_ConvertedValue;
+//#include "numcal.c"
 
 #define USART1_FIFO_BUF_SIZE   128 /* 队列最多存储128个数据缓存 */
 #define USART1_FIFO_BUF_SIZE_MASK (USART1_FIFO_BUF_SIZE-1)
@@ -282,5 +280,11 @@ u8 Cmp_Memory( u8 *ptr1, u8 *ptr2, u16 len )
 /*  处理数据的函数，可更改的部分 */
 void usart1_action(u8 *buf, u8 len)
 {
-	usart1_send_str(buf);
+    int temp = 0;
+    u16 adc_value = 0;
+
+    usart1_send_str(buf);
+    adc_value = get_adc_result();
+    temp = conv_res_to_temp((unsigned short)adc_value);
+    usart1_send_num(temp);
 }
