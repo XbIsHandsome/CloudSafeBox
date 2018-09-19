@@ -1,5 +1,6 @@
 .\obj\timer.o: code\Drv\TIM\timer\timer.c
-.\obj\timer.o: D:\Keli\ARM\ARMCC\Bin\..\include\stdio.h
+.\obj\timer.o: code\Drv\TIM\timer\timer.h
+.\obj\timer.o: .\code\Drv\SegLED\light.h
 .\obj\timer.o: ..\..\Libraries\stm32f10x.h
 .\obj\timer.o: ..\..\Libraries\core_cm3.h
 .\obj\timer.o: D:\Keli\ARM\ARMCC\Bin\..\include\stdint.h
@@ -29,13 +30,8 @@
 .\obj\timer.o: ..\..\Libraries\inc\stm32f10x_usart.h
 .\obj\timer.o: ..\..\Libraries\inc\stm32f10x_wwdg.h
 .\obj\timer.o: ..\..\Libraries\inc\misc.h
-.\obj\timer.o: .\code\Drv\SysTick\systick.h
-.\obj\timer.o: .\code\Drv\keyboard\keyboard_drv.h
-.\obj\timer.o: .\code\Drv\ADC1_DMA\adc.h
-.\obj\timer.o: .\code\Drv\ultrasonic\ultrasonic.h
-.\obj\timer.o: .\code\Drv\SegLED\segled_16bit.h
-.\obj\timer.o: code\Drv\TIM\timer\timer.h
-.\obj\timer.o: .\code\Drv\USART\usart.h
+.\obj\timer.o: .\code\Drv\USART\hal_usart1.h
+.\obj\timer.o: D:\Keli\ARM\ARMCC\Bin\..\include\stdio.h
 .\obj\timer.o: D:\Keli\ARM\ARMCC\Bin\..\include\stdlib.h
 .\obj\timer.o: D:\Keli\ARM\ARMCC\Bin\..\include\stdarg.h
 .\obj\timer.o: D:\Keli\ARM\ARMCC\Bin\..\include\string.h
@@ -43,4 +39,3 @@
 .\obj\timer.o: .\code\Drv\Door\door.h
 .\obj\timer.o: .\code\Drv\Buzzer\buzzer.h
 .\obj\timer.o: .\code\Drv\LCD12864\LCD12864.h
-.\obj\timer.o: .\code\Drv\SegLED\light.h

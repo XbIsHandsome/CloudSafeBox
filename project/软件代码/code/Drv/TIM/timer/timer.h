@@ -3,11 +3,13 @@
 #define TIMER_H
 
 
-#define	TIME2_INPUT_FREQ	20000   //20K HZ
-#define TIME2_TICK_US		(1000000/TIME2_INPUT_FREQ)
-#define	TIME2_PERIOD_US		2500   //unit us
+/* 设置定时器的频率 */
+#define	TIME2_PRESCALER 		72;
+/* 设置预先分频系数 */
+#define	TIME2_PERIOD 			1000;
+/* 定时器触发周期 72000000 / 72 / 1000 = 1000 */
+/* 触发频率为1KHz */
 
-
-void TIM2_init(void);
+void TIM2_Init(void);
 #endif
 

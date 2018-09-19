@@ -1,5 +1,5 @@
 Dependencies for Project 'project', Target 'STM3210E_RELEASE': (DO NOT MODIFY !)
-F (.\code\main.c)(0x5BA0CD0B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I..\..\Libraries\inc -I.\code\Bsp -I.\code\Drv\LCD12864 -I.\code\Drv\keyboard -I.\code\Drv\TIM\PWM_Output -I..\..\Libraries -I.\code\Drv\ADC1_DMA -I.\code\Drv\lf125k -I.\code\Drv\eeprom -I.\code\Drv\ultrasonic -I.\code\Drv\RTC -I.\code\Drv\SysTick -I.\code\Drv\USART -I.\code\Drv\TIM\timer -I.\code\Drv\SegLED -I.\code\Drv\Buzzer -I.\code\Drv\IR_Alert -I.\code\Drv\Door -I.\code\Drv\uart4 -I.\code\system -I.\code\app -I.\code\WiFiToCloud -I.\code\Drv\ADC_NumCal -I.\code\Drv\ultrasonic -I.\code\Drv\SegLED-I D:\WorkSpace\CloudSafeBox\project\软件代码\RTE-I D:\Keli\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I D:\Keli\ARM\CMSIS\Include-D__UVISION_VERSION="513" -DARMCM3 -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -D__FreeBSD__ -DDEBUG_BOOT="0" -DDEBUG_SHELL="0"-o .\obj\main.o --omf_browse .\obj\main.crf --depend .\obj\main.d)
+F (.\code\main.c)(0x5BA1E3F1)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I..\..\Libraries\inc -I.\code\Bsp -I.\code\Drv\LCD12864 -I.\code\Drv\keyboard -I.\code\Drv\TIM\PWM_Output -I..\..\Libraries -I.\code\Drv\ADC1_DMA -I.\code\Drv\lf125k -I.\code\Drv\eeprom -I.\code\Drv\ultrasonic -I.\code\Drv\RTC -I.\code\Drv\SysTick -I.\code\Drv\USART -I.\code\Drv\TIM\timer -I.\code\Drv\SegLED -I.\code\Drv\Buzzer -I.\code\Drv\IR_Alert -I.\code\Drv\Door -I.\code\Drv\uart4 -I.\code\system -I.\code\app -I.\code\WiFiToCloud -I.\code\Drv\ADC_NumCal -I.\code\Drv\ultrasonic -I.\code\Drv\SegLED-I D:\WorkSpace\CloudSafeBox\project\软件代码\RTE-I D:\Keli\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I D:\Keli\ARM\CMSIS\Include-D__UVISION_VERSION="513" -DARMCM3 -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -D__FreeBSD__ -DDEBUG_BOOT="0" -DDEBUG_SHELL="0"-o .\obj\main.o --omf_browse .\obj\main.crf --depend .\obj\main.d)
 I (D:\Keli\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (D:\Keli\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (D:\Keli\ARM\ARMCC\include\string.h)(0x5475F300)
@@ -33,32 +33,15 @@ I (..\..\Libraries\inc\stm32f10x_usart.h)(0x557E2FDA)
 I (..\..\Libraries\inc\stm32f10x_wwdg.h)(0x557E2FDA)
 I (..\..\Libraries\inc\misc.h)(0x557E2FDA)
 I (code\stm32f10x_it.h)(0x5B231415)
-I (.\code\Bsp\My_InitTask.h)(0x5B231412)
-I (.\code\Drv\SysTick\systick.h)(0x5B231414)
-I (.\code\Drv\LCD12864\LCD12864.h)(0x5B231413)
-I (.\code\Drv\keyboard\keyboard_drv.h)(0x5B231413)
-I (.\code\Drv\TIM\PWM_Output\pwm_output.h)(0x5B231414)
-I (.\code\Drv\ADC1_DMA\adc.h)(0x5B95F12E)
-I (.\code\Drv\lf125k\lf125k.h)(0x5B231413)
-I (.\code\Drv\eeprom\eeprom.h)(0x5B2A13AE)
-I (.\code\Drv\RTC\rtc.h)(0x5B231413)
-I (.\code\Drv\ultrasonic\ultrasonic.h)(0x5B97B90B)
-I (.\code\Drv\SegLED\segled_16bit.h)(0x5B231414)
-I (.\code\Drv\Buzzer\buzzer.h)(0x5B231412)
-I (.\code\Drv\IR_Alert\ir_alert.h)(0x5B231413)
-I (.\code\Drv\Door\door.h)(0x5B9FA429)
-I (.\code\Drv\uart4\hal_uart4.h)(0x5B231414)
-I (.\code\Bsp\bsp_flash.h)(0x5B2A13AE)
-I (.\code\app\app_pwd.h)(0x5B2A13AE)
-I (.\code\WiFiToCloud\WiFiToCloud.h)(0x5B2C5AD2)
-I (.\code\WiFiToCloud\HAL_WiFiToCloud.h)(0x5B2B146D)
-I (.\code\WiFiToCloud\CloudReference.h)(0x5B98D855)
-I (.\code\Drv\ADC_NumCal\numcal.h)(0x5B9F96E8)
-I (D:\Keli\ARM\ARMCC\include\math.h)(0x5475F2FE)
-I (.\code\Drv\USART\usart.h)(0x5BA07303)
+I (.\code\Drv\USART\hal_usart1.h)(0x5BA202C3)
 I (D:\Keli\ARM\ARMCC\include\stdarg.h)(0x5475F2FA)
-I (.\code\Drv\SegLED\light.h)(0x5BA092B1)
-I (.\code\Drv\TIM\timer\timer.h)(0x5BA0CD6C)
+I (.\code\Drv\TIM\PWM_Output\pwm_output.h)(0x5B231414)
+I (.\code\Drv\Door\door.h)(0x5B9FA429)
+I (.\code\Drv\Buzzer\buzzer.h)(0x5B231412)
+I (.\code\Drv\LCD12864\LCD12864.h)(0x5B231413)
+I (.\code\Drv\SegLED\light.h)(0x5BA1D414)
+I (.\code\Drv\TIM\timer\timer.h)(0x5BA1E56B)
+I (.\code\Bsp\task.h)(0x5BA1A7AC)
 F (.\code\app\app_pwd.c)(0x5B95F0D5)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I..\..\Libraries\inc -I.\code\Bsp -I.\code\Drv\LCD12864 -I.\code\Drv\keyboard -I.\code\Drv\TIM\PWM_Output -I..\..\Libraries -I.\code\Drv\ADC1_DMA -I.\code\Drv\lf125k -I.\code\Drv\eeprom -I.\code\Drv\ultrasonic -I.\code\Drv\RTC -I.\code\Drv\SysTick -I.\code\Drv\USART -I.\code\Drv\TIM\timer -I.\code\Drv\SegLED -I.\code\Drv\Buzzer -I.\code\Drv\IR_Alert -I.\code\Drv\Door -I.\code\Drv\uart4 -I.\code\system -I.\code\app -I.\code\WiFiToCloud -I.\code\Drv\ADC_NumCal -I.\code\Drv\ultrasonic -I.\code\Drv\SegLED-I D:\WorkSpace\CloudSafeBox\project\软件代码\RTE-I D:\Keli\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I D:\Keli\ARM\CMSIS\Include-D__UVISION_VERSION="513" -DARMCM3 -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -D__FreeBSD__ -DDEBUG_BOOT="0" -DDEBUG_SHELL="0"-o .\obj\app_pwd.o --omf_browse .\obj\app_pwd.crf --depend .\obj\app_pwd.d)
 I (code\app\app_pwd.h)(0x5B2A13AE)
 I (.\code\Bsp\bsp_flash.h)(0x5B2A13AE)
@@ -94,207 +77,6 @@ I (..\..\Libraries\inc\misc.h)(0x557E2FDA)
 I (D:\Keli\ARM\ARMCC\include\string.h)(0x5475F300)
 I (D:\Keli\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (D:\Keli\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-F (.\code\Drv\LCD12864\LCD12864.c)(0x5B231413)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I..\..\Libraries\inc -I.\code\Bsp -I.\code\Drv\LCD12864 -I.\code\Drv\keyboard -I.\code\Drv\TIM\PWM_Output -I..\..\Libraries -I.\code\Drv\ADC1_DMA -I.\code\Drv\lf125k -I.\code\Drv\eeprom -I.\code\Drv\ultrasonic -I.\code\Drv\RTC -I.\code\Drv\SysTick -I.\code\Drv\USART -I.\code\Drv\TIM\timer -I.\code\Drv\SegLED -I.\code\Drv\Buzzer -I.\code\Drv\IR_Alert -I.\code\Drv\Door -I.\code\Drv\uart4 -I.\code\system -I.\code\app -I.\code\WiFiToCloud -I.\code\Drv\ADC_NumCal -I.\code\Drv\ultrasonic -I.\code\Drv\SegLED-I D:\WorkSpace\CloudSafeBox\project\软件代码\RTE-I D:\Keli\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I D:\Keli\ARM\CMSIS\Include-D__UVISION_VERSION="513" -DARMCM3 -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -D__FreeBSD__ -DDEBUG_BOOT="0" -DDEBUG_SHELL="0"-o .\obj\lcd12864.o --omf_browse .\obj\lcd12864.crf --depend .\obj\lcd12864.d)
-I (D:\Keli\ARM\ARMCC\include\stdio.h)(0x5475F300)
-I (..\..\Libraries\inc\stm32f10x_gpio.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../core_cm3.h)(0x557E2FDA)
-I (D:\Keli\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (..\..\Libraries\inc\../system_stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../stm32f10x_conf.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../inc\stm32f10x_adc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../inc\../stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../inc\stm32f10x_bkp.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../inc\stm32f10x_can.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../inc\stm32f10x_cec.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../inc\stm32f10x_crc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../inc\stm32f10x_dac.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../inc\stm32f10x_dbgmcu.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../inc\stm32f10x_dma.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../inc\stm32f10x_exti.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../inc\stm32f10x_flash.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../inc\stm32f10x_fsmc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../inc\stm32f10x_gpio.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../inc\stm32f10x_i2c.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../inc\stm32f10x_iwdg.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../inc\stm32f10x_pwr.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../inc\stm32f10x_rcc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../inc\stm32f10x_rtc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../inc\stm32f10x_sdio.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../inc\stm32f10x_spi.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../inc\stm32f10x_tim.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../inc\stm32f10x_usart.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../inc\stm32f10x_wwdg.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../inc\misc.h)(0x557E2FDA)
-I (.\code\Drv\SysTick\systick.h)(0x5B231414)
-I (code\Drv\LCD12864\LCD12864.h)(0x5B231413)
-F (.\code\Drv\keyboard\keyboard_drv.c)(0x5B231413)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I..\..\Libraries\inc -I.\code\Bsp -I.\code\Drv\LCD12864 -I.\code\Drv\keyboard -I.\code\Drv\TIM\PWM_Output -I..\..\Libraries -I.\code\Drv\ADC1_DMA -I.\code\Drv\lf125k -I.\code\Drv\eeprom -I.\code\Drv\ultrasonic -I.\code\Drv\RTC -I.\code\Drv\SysTick -I.\code\Drv\USART -I.\code\Drv\TIM\timer -I.\code\Drv\SegLED -I.\code\Drv\Buzzer -I.\code\Drv\IR_Alert -I.\code\Drv\Door -I.\code\Drv\uart4 -I.\code\system -I.\code\app -I.\code\WiFiToCloud -I.\code\Drv\ADC_NumCal -I.\code\Drv\ultrasonic -I.\code\Drv\SegLED-I D:\WorkSpace\CloudSafeBox\project\软件代码\RTE-I D:\Keli\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I D:\Keli\ARM\CMSIS\Include-D__UVISION_VERSION="513" -DARMCM3 -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -D__FreeBSD__ -DDEBUG_BOOT="0" -DDEBUG_SHELL="0"-o .\obj\keyboard_drv.o --omf_browse .\obj\keyboard_drv.crf --depend .\obj\keyboard_drv.d)
-I (D:\Keli\ARM\ARMCC\include\stdio.h)(0x5475F300)
-I (D:\Keli\ARM\ARMCC\include\string.h)(0x5475F300)
-I (..\..\Libraries\stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\core_cm3.h)(0x557E2FDA)
-I (D:\Keli\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (..\..\Libraries\system_stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\stm32f10x_conf.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_adc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_bkp.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_can.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_cec.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_crc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dac.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dbgmcu.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dma.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_exti.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_flash.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_fsmc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_gpio.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_i2c.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_iwdg.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_pwr.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_rcc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_rtc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_sdio.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_spi.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_tim.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_usart.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_wwdg.h)(0x557E2FDA)
-I (..\..\Libraries\inc\misc.h)(0x557E2FDA)
-I (code\Drv\keyboard\keyboard_drv.h)(0x5B231413)
-I (.\code\Drv\SysTick\systick.h)(0x5B231414)
-I (.\code\Drv\LCD12864\LCD12864.h)(0x5B231413)
-I (.\code\Drv\TIM\timer\timer.h)(0x5BA0CD6C)
-F (.\code\Drv\ADC1_DMA\adc.c)(0x5B231412)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I..\..\Libraries\inc -I.\code\Bsp -I.\code\Drv\LCD12864 -I.\code\Drv\keyboard -I.\code\Drv\TIM\PWM_Output -I..\..\Libraries -I.\code\Drv\ADC1_DMA -I.\code\Drv\lf125k -I.\code\Drv\eeprom -I.\code\Drv\ultrasonic -I.\code\Drv\RTC -I.\code\Drv\SysTick -I.\code\Drv\USART -I.\code\Drv\TIM\timer -I.\code\Drv\SegLED -I.\code\Drv\Buzzer -I.\code\Drv\IR_Alert -I.\code\Drv\Door -I.\code\Drv\uart4 -I.\code\system -I.\code\app -I.\code\WiFiToCloud -I.\code\Drv\ADC_NumCal -I.\code\Drv\ultrasonic -I.\code\Drv\SegLED-I D:\WorkSpace\CloudSafeBox\project\软件代码\RTE-I D:\Keli\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I D:\Keli\ARM\CMSIS\Include-D__UVISION_VERSION="513" -DARMCM3 -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -D__FreeBSD__ -DDEBUG_BOOT="0" -DDEBUG_SHELL="0"-o .\obj\adc.o --omf_browse .\obj\adc.crf --depend .\obj\adc.d)
-I (D:\Keli\ARM\ARMCC\include\string.h)(0x5475F300)
-I (D:\Keli\ARM\ARMCC\include\stdio.h)(0x5475F300)
-I (D:\Keli\ARM\ARMCC\include\math.h)(0x5475F2FE)
-I (..\..\Libraries\stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\core_cm3.h)(0x557E2FDA)
-I (D:\Keli\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (..\..\Libraries\system_stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\stm32f10x_conf.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_adc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_bkp.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_can.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_cec.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_crc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dac.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dbgmcu.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dma.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_exti.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_flash.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_fsmc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_gpio.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_i2c.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_iwdg.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_pwr.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_rcc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_rtc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_sdio.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_spi.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_tim.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_usart.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_wwdg.h)(0x557E2FDA)
-I (..\..\Libraries\inc\misc.h)(0x557E2FDA)
-I (code\Drv\ADC1_DMA\adc.h)(0x5B95F12E)
-I (.\code\Drv\TIM\timer\timer.h)(0x5BA0CD6C)
-F (.\code\Drv\eeprom\eeprom.c)(0x5B231413)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I..\..\Libraries\inc -I.\code\Bsp -I.\code\Drv\LCD12864 -I.\code\Drv\keyboard -I.\code\Drv\TIM\PWM_Output -I..\..\Libraries -I.\code\Drv\ADC1_DMA -I.\code\Drv\lf125k -I.\code\Drv\eeprom -I.\code\Drv\ultrasonic -I.\code\Drv\RTC -I.\code\Drv\SysTick -I.\code\Drv\USART -I.\code\Drv\TIM\timer -I.\code\Drv\SegLED -I.\code\Drv\Buzzer -I.\code\Drv\IR_Alert -I.\code\Drv\Door -I.\code\Drv\uart4 -I.\code\system -I.\code\app -I.\code\WiFiToCloud -I.\code\Drv\ADC_NumCal -I.\code\Drv\ultrasonic -I.\code\Drv\SegLED-I D:\WorkSpace\CloudSafeBox\project\软件代码\RTE-I D:\Keli\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I D:\Keli\ARM\CMSIS\Include-D__UVISION_VERSION="513" -DARMCM3 -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -D__FreeBSD__ -DDEBUG_BOOT="0" -DDEBUG_SHELL="0"-o .\obj\eeprom.o --omf_browse .\obj\eeprom.crf --depend .\obj\eeprom.d)
-I (..\..\Libraries\stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\core_cm3.h)(0x557E2FDA)
-I (D:\Keli\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (..\..\Libraries\system_stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\stm32f10x_conf.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_adc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_bkp.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_can.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_cec.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_crc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dac.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dbgmcu.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dma.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_exti.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_flash.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_fsmc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_gpio.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_i2c.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_iwdg.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_pwr.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_rcc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_rtc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_sdio.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_spi.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_tim.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_usart.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_wwdg.h)(0x557E2FDA)
-I (..\..\Libraries\inc\misc.h)(0x557E2FDA)
-I (code\Drv\eeprom\eeprom.h)(0x5B2A13AE)
-F (.\code\Drv\lf125k\lf125k.c)(0x5B231413)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I..\..\Libraries\inc -I.\code\Bsp -I.\code\Drv\LCD12864 -I.\code\Drv\keyboard -I.\code\Drv\TIM\PWM_Output -I..\..\Libraries -I.\code\Drv\ADC1_DMA -I.\code\Drv\lf125k -I.\code\Drv\eeprom -I.\code\Drv\ultrasonic -I.\code\Drv\RTC -I.\code\Drv\SysTick -I.\code\Drv\USART -I.\code\Drv\TIM\timer -I.\code\Drv\SegLED -I.\code\Drv\Buzzer -I.\code\Drv\IR_Alert -I.\code\Drv\Door -I.\code\Drv\uart4 -I.\code\system -I.\code\app -I.\code\WiFiToCloud -I.\code\Drv\ADC_NumCal -I.\code\Drv\ultrasonic -I.\code\Drv\SegLED-I D:\WorkSpace\CloudSafeBox\project\软件代码\RTE-I D:\Keli\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I D:\Keli\ARM\CMSIS\Include-D__UVISION_VERSION="513" -DARMCM3 -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -D__FreeBSD__ -DDEBUG_BOOT="0" -DDEBUG_SHELL="0"-o .\obj\lf125k.o --omf_browse .\obj\lf125k.crf --depend .\obj\lf125k.d)
-I (D:\Keli\ARM\ARMCC\include\string.h)(0x5475F300)
-I (..\..\Libraries\stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\core_cm3.h)(0x557E2FDA)
-I (D:\Keli\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (..\..\Libraries\system_stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\stm32f10x_conf.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_adc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_bkp.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_can.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_cec.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_crc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dac.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dbgmcu.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dma.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_exti.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_flash.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_fsmc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_gpio.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_i2c.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_iwdg.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_pwr.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_rcc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_rtc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_sdio.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_spi.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_tim.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_usart.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_wwdg.h)(0x557E2FDA)
-I (..\..\Libraries\inc\misc.h)(0x557E2FDA)
-I (.\code\Drv\SysTick\systick.h)(0x5B231414)
-I (code\Drv\lf125k\lf125k.h)(0x5B231413)
-F (.\code\Drv\ultrasonic\ultrasonic.c)(0x5B9CEF43)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I..\..\Libraries\inc -I.\code\Bsp -I.\code\Drv\LCD12864 -I.\code\Drv\keyboard -I.\code\Drv\TIM\PWM_Output -I..\..\Libraries -I.\code\Drv\ADC1_DMA -I.\code\Drv\lf125k -I.\code\Drv\eeprom -I.\code\Drv\ultrasonic -I.\code\Drv\RTC -I.\code\Drv\SysTick -I.\code\Drv\USART -I.\code\Drv\TIM\timer -I.\code\Drv\SegLED -I.\code\Drv\Buzzer -I.\code\Drv\IR_Alert -I.\code\Drv\Door -I.\code\Drv\uart4 -I.\code\system -I.\code\app -I.\code\WiFiToCloud -I.\code\Drv\ADC_NumCal -I.\code\Drv\ultrasonic -I.\code\Drv\SegLED-I D:\WorkSpace\CloudSafeBox\project\软件代码\RTE-I D:\Keli\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I D:\Keli\ARM\CMSIS\Include-D__UVISION_VERSION="513" -DARMCM3 -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -D__FreeBSD__ -DDEBUG_BOOT="0" -DDEBUG_SHELL="0"-o .\obj\ultrasonic.o --omf_browse .\obj\ultrasonic.crf --depend .\obj\ultrasonic.d)
-I (..\..\Libraries\stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\core_cm3.h)(0x557E2FDA)
-I (D:\Keli\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (..\..\Libraries\system_stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\stm32f10x_conf.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_adc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_bkp.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_can.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_cec.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_crc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dac.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dbgmcu.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dma.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_exti.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_flash.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_fsmc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_gpio.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_i2c.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_iwdg.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_pwr.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_rcc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_rtc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_sdio.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_spi.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_tim.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_usart.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_wwdg.h)(0x557E2FDA)
-I (..\..\Libraries\inc\misc.h)(0x557E2FDA)
-I (D:\Keli\ARM\ARMCC\include\stdio.h)(0x5475F300)
-I (code\Drv\ultrasonic\ultrasonic.h)(0x5B97B90B)
 F (.\code\Drv\RTC\rtc.c)(0x5B231413)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I..\..\Libraries\inc -I.\code\Bsp -I.\code\Drv\LCD12864 -I.\code\Drv\keyboard -I.\code\Drv\TIM\PWM_Output -I..\..\Libraries -I.\code\Drv\ADC1_DMA -I.\code\Drv\lf125k -I.\code\Drv\eeprom -I.\code\Drv\ultrasonic -I.\code\Drv\RTC -I.\code\Drv\SysTick -I.\code\Drv\USART -I.\code\Drv\TIM\timer -I.\code\Drv\SegLED -I.\code\Drv\Buzzer -I.\code\Drv\IR_Alert -I.\code\Drv\Door -I.\code\Drv\uart4 -I.\code\system -I.\code\app -I.\code\WiFiToCloud -I.\code\Drv\ADC_NumCal -I.\code\Drv\ultrasonic -I.\code\Drv\SegLED-I D:\WorkSpace\CloudSafeBox\project\软件代码\RTE-I D:\Keli\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I D:\Keli\ARM\CMSIS\Include-D__UVISION_VERSION="513" -DARMCM3 -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -D__FreeBSD__ -DDEBUG_BOOT="0" -DDEBUG_SHELL="0"-o .\obj\rtc.o --omf_browse .\obj\rtc.crf --depend .\obj\rtc.d)
 I (..\..\Libraries\stm32f10x.h)(0x557E2FDA)
 I (..\..\Libraries\core_cm3.h)(0x557E2FDA)
@@ -360,80 +142,6 @@ I (..\..\Libraries\inc\stm32f10x_usart.h)(0x557E2FDA)
 I (..\..\Libraries\inc\stm32f10x_wwdg.h)(0x557E2FDA)
 I (..\..\Libraries\inc\misc.h)(0x557E2FDA)
 I (code\Drv\SysTick\systick.h)(0x5B231414)
-F (.\code\Drv\USART\usart.c)(0x5BA092A3)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I..\..\Libraries\inc -I.\code\Bsp -I.\code\Drv\LCD12864 -I.\code\Drv\keyboard -I.\code\Drv\TIM\PWM_Output -I..\..\Libraries -I.\code\Drv\ADC1_DMA -I.\code\Drv\lf125k -I.\code\Drv\eeprom -I.\code\Drv\ultrasonic -I.\code\Drv\RTC -I.\code\Drv\SysTick -I.\code\Drv\USART -I.\code\Drv\TIM\timer -I.\code\Drv\SegLED -I.\code\Drv\Buzzer -I.\code\Drv\IR_Alert -I.\code\Drv\Door -I.\code\Drv\uart4 -I.\code\system -I.\code\app -I.\code\WiFiToCloud -I.\code\Drv\ADC_NumCal -I.\code\Drv\ultrasonic -I.\code\Drv\SegLED-I D:\WorkSpace\CloudSafeBox\project\软件代码\RTE-I D:\Keli\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I D:\Keli\ARM\CMSIS\Include-D__UVISION_VERSION="513" -DARMCM3 -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -D__FreeBSD__ -DDEBUG_BOOT="0" -DDEBUG_SHELL="0"-o .\obj\usart.o --omf_browse .\obj\usart.crf --depend .\obj\usart.d)
-I (code\Drv\USART\usart.h)(0x5BA07303)
-I (..\..\Libraries\stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\core_cm3.h)(0x557E2FDA)
-I (D:\Keli\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (..\..\Libraries\system_stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\stm32f10x_conf.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_adc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_bkp.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_can.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_cec.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_crc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dac.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dbgmcu.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dma.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_exti.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_flash.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_fsmc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_gpio.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_i2c.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_iwdg.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_pwr.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_rcc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_rtc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_sdio.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_spi.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_tim.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_usart.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_wwdg.h)(0x557E2FDA)
-I (..\..\Libraries\inc\misc.h)(0x557E2FDA)
-I (D:\Keli\ARM\ARMCC\include\stdio.h)(0x5475F300)
-I (D:\Keli\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (D:\Keli\ARM\ARMCC\include\stdarg.h)(0x5475F2FA)
-I (D:\Keli\ARM\ARMCC\include\string.h)(0x5475F300)
-I (.\code\Drv\TIM\PWM_Output\pwm_output.h)(0x5B231414)
-I (.\code\Drv\Door\door.h)(0x5B9FA429)
-I (.\code\Drv\Buzzer\buzzer.h)(0x5B231412)
-I (.\code\Drv\LCD12864\LCD12864.h)(0x5B231413)
-I (.\code\Drv\SegLED\light.h)(0x5BA092B1)
-F (.\code\Drv\SegLED\SegLED_16bit.c)(0x5B231413)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I..\..\Libraries\inc -I.\code\Bsp -I.\code\Drv\LCD12864 -I.\code\Drv\keyboard -I.\code\Drv\TIM\PWM_Output -I..\..\Libraries -I.\code\Drv\ADC1_DMA -I.\code\Drv\lf125k -I.\code\Drv\eeprom -I.\code\Drv\ultrasonic -I.\code\Drv\RTC -I.\code\Drv\SysTick -I.\code\Drv\USART -I.\code\Drv\TIM\timer -I.\code\Drv\SegLED -I.\code\Drv\Buzzer -I.\code\Drv\IR_Alert -I.\code\Drv\Door -I.\code\Drv\uart4 -I.\code\system -I.\code\app -I.\code\WiFiToCloud -I.\code\Drv\ADC_NumCal -I.\code\Drv\ultrasonic -I.\code\Drv\SegLED-I D:\WorkSpace\CloudSafeBox\project\软件代码\RTE-I D:\Keli\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I D:\Keli\ARM\CMSIS\Include-D__UVISION_VERSION="513" -DARMCM3 -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -D__FreeBSD__ -DDEBUG_BOOT="0" -DDEBUG_SHELL="0"-o .\obj\segled_16bit.o --omf_browse .\obj\segled_16bit.crf --depend .\obj\segled_16bit.d)
-I (D:\Keli\ARM\ARMCC\include\stdio.h)(0x5475F300)
-I (D:\Keli\ARM\ARMCC\include\string.h)(0x5475F300)
-I (..\..\Libraries\stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\core_cm3.h)(0x557E2FDA)
-I (D:\Keli\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (..\..\Libraries\system_stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\stm32f10x_conf.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_adc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_bkp.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_can.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_cec.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_crc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dac.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dbgmcu.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dma.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_exti.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_flash.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_fsmc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_gpio.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_i2c.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_iwdg.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_pwr.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_rcc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_rtc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_sdio.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_spi.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_tim.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_usart.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_wwdg.h)(0x557E2FDA)
-I (..\..\Libraries\inc\misc.h)(0x557E2FDA)
-I (code\Drv\SegLED\segled_16bit.h)(0x5B231414)
-I (.\code\Drv\TIM\timer\timer.h)(0x5BA0CD6C)
 F (.\code\Drv\Buzzer\buzzer.c)(0x5B9A0F7D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I..\..\Libraries\inc -I.\code\Bsp -I.\code\Drv\LCD12864 -I.\code\Drv\keyboard -I.\code\Drv\TIM\PWM_Output -I..\..\Libraries -I.\code\Drv\ADC1_DMA -I.\code\Drv\lf125k -I.\code\Drv\eeprom -I.\code\Drv\ultrasonic -I.\code\Drv\RTC -I.\code\Drv\SysTick -I.\code\Drv\USART -I.\code\Drv\TIM\timer -I.\code\Drv\SegLED -I.\code\Drv\Buzzer -I.\code\Drv\IR_Alert -I.\code\Drv\Door -I.\code\Drv\uart4 -I.\code\system -I.\code\app -I.\code\WiFiToCloud -I.\code\Drv\ADC_NumCal -I.\code\Drv\ultrasonic -I.\code\Drv\SegLED-I D:\WorkSpace\CloudSafeBox\project\软件代码\RTE-I D:\Keli\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I D:\Keli\ARM\CMSIS\Include-D__UVISION_VERSION="513" -DARMCM3 -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -D__FreeBSD__ -DDEBUG_BOOT="0" -DDEBUG_SHELL="0"-o .\obj\buzzer.o --omf_browse .\obj\buzzer.crf --depend .\obj\buzzer.d)
 I (.\code\Bsp\..\..\..\..\Libraries\stm32f10x.h)(0x557E2FDA)
 I (.\code\Bsp\..\..\..\..\Libraries\core_cm3.h)(0x557E2FDA)
@@ -561,73 +269,11 @@ I (.\code\Bsp\..\..\..\..\Libraries\inc\stm32f10x_wwdg.h)(0x557E2FDA)
 I (.\code\Bsp\..\..\..\..\Libraries\inc\misc.h)(0x557E2FDA)
 I (.\code\system\sys.h)(0x5B231415)
 I (D:\Keli\ARM\ARMCC\include\string.h)(0x5475F300)
-F (.\code\Drv\eeprom\eeprom_flash.c)(0x5B2A13AE)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I..\..\Libraries\inc -I.\code\Bsp -I.\code\Drv\LCD12864 -I.\code\Drv\keyboard -I.\code\Drv\TIM\PWM_Output -I..\..\Libraries -I.\code\Drv\ADC1_DMA -I.\code\Drv\lf125k -I.\code\Drv\eeprom -I.\code\Drv\ultrasonic -I.\code\Drv\RTC -I.\code\Drv\SysTick -I.\code\Drv\USART -I.\code\Drv\TIM\timer -I.\code\Drv\SegLED -I.\code\Drv\Buzzer -I.\code\Drv\IR_Alert -I.\code\Drv\Door -I.\code\Drv\uart4 -I.\code\system -I.\code\app -I.\code\WiFiToCloud -I.\code\Drv\ADC_NumCal -I.\code\Drv\ultrasonic -I.\code\Drv\SegLED-I D:\WorkSpace\CloudSafeBox\project\软件代码\RTE-I D:\Keli\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I D:\Keli\ARM\CMSIS\Include-D__UVISION_VERSION="513" -DARMCM3 -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -D__FreeBSD__ -DDEBUG_BOOT="0" -DDEBUG_SHELL="0"-o .\obj\eeprom_flash.o --omf_browse .\obj\eeprom_flash.crf --depend .\obj\eeprom_flash.d)
-I (code\Drv\eeprom\eeprom_flash.h)(0x5B2A13AE)
-I (..\..\Libraries\stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\core_cm3.h)(0x557E2FDA)
-I (D:\Keli\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (..\..\Libraries\system_stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\stm32f10x_conf.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_adc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_bkp.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_can.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_cec.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_crc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dac.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dbgmcu.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dma.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_exti.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_flash.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_fsmc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_gpio.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_i2c.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_iwdg.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_pwr.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_rcc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_rtc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_sdio.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_spi.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_tim.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_usart.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_wwdg.h)(0x557E2FDA)
-I (..\..\Libraries\inc\misc.h)(0x557E2FDA)
 F (.\code\Drv\ADC_NumCal\numcal.c)(0x5B9F96F1)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I..\..\Libraries\inc -I.\code\Bsp -I.\code\Drv\LCD12864 -I.\code\Drv\keyboard -I.\code\Drv\TIM\PWM_Output -I..\..\Libraries -I.\code\Drv\ADC1_DMA -I.\code\Drv\lf125k -I.\code\Drv\eeprom -I.\code\Drv\ultrasonic -I.\code\Drv\RTC -I.\code\Drv\SysTick -I.\code\Drv\USART -I.\code\Drv\TIM\timer -I.\code\Drv\SegLED -I.\code\Drv\Buzzer -I.\code\Drv\IR_Alert -I.\code\Drv\Door -I.\code\Drv\uart4 -I.\code\system -I.\code\app -I.\code\WiFiToCloud -I.\code\Drv\ADC_NumCal -I.\code\Drv\ultrasonic -I.\code\Drv\SegLED-I D:\WorkSpace\CloudSafeBox\project\软件代码\RTE-I D:\Keli\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I D:\Keli\ARM\CMSIS\Include-D__UVISION_VERSION="513" -DARMCM3 -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -D__FreeBSD__ -DDEBUG_BOOT="0" -DDEBUG_SHELL="0"-o .\obj\numcal.o --omf_browse .\obj\numcal.crf --depend .\obj\numcal.d)
 I (code\Drv\ADC_NumCal\numcal.h)(0x5B9F96E8)
 I (D:\Keli\ARM\ARMCC\include\math.h)(0x5475F2FE)
-F (.\code\Drv\TIM\PWM_Output\pwm_output.c)(0x5B965E74)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I..\..\Libraries\inc -I.\code\Bsp -I.\code\Drv\LCD12864 -I.\code\Drv\keyboard -I.\code\Drv\TIM\PWM_Output -I..\..\Libraries -I.\code\Drv\ADC1_DMA -I.\code\Drv\lf125k -I.\code\Drv\eeprom -I.\code\Drv\ultrasonic -I.\code\Drv\RTC -I.\code\Drv\SysTick -I.\code\Drv\USART -I.\code\Drv\TIM\timer -I.\code\Drv\SegLED -I.\code\Drv\Buzzer -I.\code\Drv\IR_Alert -I.\code\Drv\Door -I.\code\Drv\uart4 -I.\code\system -I.\code\app -I.\code\WiFiToCloud -I.\code\Drv\ADC_NumCal -I.\code\Drv\ultrasonic -I.\code\Drv\SegLED-I D:\WorkSpace\CloudSafeBox\project\软件代码\RTE-I D:\Keli\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I D:\Keli\ARM\CMSIS\Include-D__UVISION_VERSION="513" -DARMCM3 -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -D__FreeBSD__ -DDEBUG_BOOT="0" -DDEBUG_SHELL="0"-o .\obj\pwm_output.o --omf_browse .\obj\pwm_output.crf --depend .\obj\pwm_output.d)
-I (.\code\Bsp\..\..\..\..\Libraries\stm32f10x.h)(0x557E2FDA)
-I (.\code\Bsp\..\..\..\..\Libraries\core_cm3.h)(0x557E2FDA)
-I (D:\Keli\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (.\code\Bsp\..\..\..\..\Libraries\system_stm32f10x.h)(0x557E2FDA)
-I (.\code\Bsp\..\..\..\..\Libraries\stm32f10x_conf.h)(0x557E2FDA)
-I (.\code\Bsp\..\..\..\..\Libraries\inc\stm32f10x_adc.h)(0x557E2FDA)
-I (.\code\Bsp\..\..\..\..\Libraries\inc\../stm32f10x.h)(0x557E2FDA)
-I (.\code\Bsp\..\..\..\..\Libraries\inc\stm32f10x_bkp.h)(0x557E2FDA)
-I (.\code\Bsp\..\..\..\..\Libraries\inc\stm32f10x_can.h)(0x557E2FDA)
-I (.\code\Bsp\..\..\..\..\Libraries\inc\stm32f10x_cec.h)(0x557E2FDA)
-I (.\code\Bsp\..\..\..\..\Libraries\inc\stm32f10x_crc.h)(0x557E2FDA)
-I (.\code\Bsp\..\..\..\..\Libraries\inc\stm32f10x_dac.h)(0x557E2FDA)
-I (.\code\Bsp\..\..\..\..\Libraries\inc\stm32f10x_dbgmcu.h)(0x557E2FDA)
-I (.\code\Bsp\..\..\..\..\Libraries\inc\stm32f10x_dma.h)(0x557E2FDA)
-I (.\code\Bsp\..\..\..\..\Libraries\inc\stm32f10x_exti.h)(0x557E2FDA)
-I (.\code\Bsp\..\..\..\..\Libraries\inc\stm32f10x_flash.h)(0x557E2FDA)
-I (.\code\Bsp\..\..\..\..\Libraries\inc\stm32f10x_fsmc.h)(0x557E2FDA)
-I (.\code\Bsp\..\..\..\..\Libraries\inc\stm32f10x_gpio.h)(0x557E2FDA)
-I (.\code\Bsp\..\..\..\..\Libraries\inc\stm32f10x_i2c.h)(0x557E2FDA)
-I (.\code\Bsp\..\..\..\..\Libraries\inc\stm32f10x_iwdg.h)(0x557E2FDA)
-I (.\code\Bsp\..\..\..\..\Libraries\inc\stm32f10x_pwr.h)(0x557E2FDA)
-I (.\code\Bsp\..\..\..\..\Libraries\inc\stm32f10x_rcc.h)(0x557E2FDA)
-I (.\code\Bsp\..\..\..\..\Libraries\inc\stm32f10x_rtc.h)(0x557E2FDA)
-I (.\code\Bsp\..\..\..\..\Libraries\inc\stm32f10x_sdio.h)(0x557E2FDA)
-I (.\code\Bsp\..\..\..\..\Libraries\inc\stm32f10x_spi.h)(0x557E2FDA)
-I (.\code\Bsp\..\..\..\..\Libraries\inc\stm32f10x_tim.h)(0x557E2FDA)
-I (.\code\Bsp\..\..\..\..\Libraries\inc\stm32f10x_usart.h)(0x557E2FDA)
-I (.\code\Bsp\..\..\..\..\Libraries\inc\stm32f10x_wwdg.h)(0x557E2FDA)
-I (.\code\Bsp\..\..\..\..\Libraries\inc\misc.h)(0x557E2FDA)
-I (code\Drv\TIM\PWM_Output\pwm_output.h)(0x5B231414)
-F (.\code\Drv\TIM\timer\timer.c)(0x5BA0CDFF)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I..\..\Libraries\inc -I.\code\Bsp -I.\code\Drv\LCD12864 -I.\code\Drv\keyboard -I.\code\Drv\TIM\PWM_Output -I..\..\Libraries -I.\code\Drv\ADC1_DMA -I.\code\Drv\lf125k -I.\code\Drv\eeprom -I.\code\Drv\ultrasonic -I.\code\Drv\RTC -I.\code\Drv\SysTick -I.\code\Drv\USART -I.\code\Drv\TIM\timer -I.\code\Drv\SegLED -I.\code\Drv\Buzzer -I.\code\Drv\IR_Alert -I.\code\Drv\Door -I.\code\Drv\uart4 -I.\code\system -I.\code\app -I.\code\WiFiToCloud -I.\code\Drv\ADC_NumCal -I.\code\Drv\ultrasonic -I.\code\Drv\SegLED-I D:\WorkSpace\CloudSafeBox\project\软件代码\RTE-I D:\Keli\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I D:\Keli\ARM\CMSIS\Include-D__UVISION_VERSION="513" -DARMCM3 -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -D__FreeBSD__ -DDEBUG_BOOT="0" -DDEBUG_SHELL="0"-o .\obj\timer.o --omf_browse .\obj\timer.crf --depend .\obj\timer.d)
-I (D:\Keli\ARM\ARMCC\include\stdio.h)(0x5475F300)
+F (.\code\Drv\SegLED\light.c)(0x5BA1D429)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I..\..\Libraries\inc -I.\code\Bsp -I.\code\Drv\LCD12864 -I.\code\Drv\keyboard -I.\code\Drv\TIM\PWM_Output -I..\..\Libraries -I.\code\Drv\ADC1_DMA -I.\code\Drv\lf125k -I.\code\Drv\eeprom -I.\code\Drv\ultrasonic -I.\code\Drv\RTC -I.\code\Drv\SysTick -I.\code\Drv\USART -I.\code\Drv\TIM\timer -I.\code\Drv\SegLED -I.\code\Drv\Buzzer -I.\code\Drv\IR_Alert -I.\code\Drv\Door -I.\code\Drv\uart4 -I.\code\system -I.\code\app -I.\code\WiFiToCloud -I.\code\Drv\ADC_NumCal -I.\code\Drv\ultrasonic -I.\code\Drv\SegLED-I D:\WorkSpace\CloudSafeBox\project\软件代码\RTE-I D:\Keli\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I D:\Keli\ARM\CMSIS\Include-D__UVISION_VERSION="513" -DARMCM3 -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -D__FreeBSD__ -DDEBUG_BOOT="0" -DDEBUG_SHELL="0"-o .\obj\light.o --omf_browse .\obj\light.crf --depend .\obj\light.d)
+I (code\Drv\SegLED\light.h)(0x5BA1D414)
 I (..\..\Libraries\stm32f10x.h)(0x557E2FDA)
 I (..\..\Libraries\core_cm3.h)(0x557E2FDA)
 I (D:\Keli\ARM\ARMCC\include\stdint.h)(0x5475F300)
@@ -657,23 +303,8 @@ I (..\..\Libraries\inc\stm32f10x_tim.h)(0x557E2FDA)
 I (..\..\Libraries\inc\stm32f10x_usart.h)(0x557E2FDA)
 I (..\..\Libraries\inc\stm32f10x_wwdg.h)(0x557E2FDA)
 I (..\..\Libraries\inc\misc.h)(0x557E2FDA)
-I (.\code\Drv\SysTick\systick.h)(0x5B231414)
-I (.\code\Drv\keyboard\keyboard_drv.h)(0x5B231413)
-I (.\code\Drv\ADC1_DMA\adc.h)(0x5B95F12E)
-I (.\code\Drv\ultrasonic\ultrasonic.h)(0x5B97B90B)
-I (.\code\Drv\SegLED\segled_16bit.h)(0x5B231414)
-I (code\Drv\TIM\timer\timer.h)(0x5BA0CD6C)
-I (.\code\Drv\USART\usart.h)(0x5BA07303)
-I (D:\Keli\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (D:\Keli\ARM\ARMCC\include\stdarg.h)(0x5475F2FA)
-I (D:\Keli\ARM\ARMCC\include\string.h)(0x5475F300)
-I (.\code\Drv\TIM\PWM_Output\pwm_output.h)(0x5B231414)
-I (.\code\Drv\Door\door.h)(0x5B9FA429)
-I (.\code\Drv\Buzzer\buzzer.h)(0x5B231412)
-I (.\code\Drv\LCD12864\LCD12864.h)(0x5B231413)
-I (.\code\Drv\SegLED\light.h)(0x5BA092B1)
-F (.\code\Drv\SegLED\light.c)(0x5BA07097)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I..\..\Libraries\inc -I.\code\Bsp -I.\code\Drv\LCD12864 -I.\code\Drv\keyboard -I.\code\Drv\TIM\PWM_Output -I..\..\Libraries -I.\code\Drv\ADC1_DMA -I.\code\Drv\lf125k -I.\code\Drv\eeprom -I.\code\Drv\ultrasonic -I.\code\Drv\RTC -I.\code\Drv\SysTick -I.\code\Drv\USART -I.\code\Drv\TIM\timer -I.\code\Drv\SegLED -I.\code\Drv\Buzzer -I.\code\Drv\IR_Alert -I.\code\Drv\Door -I.\code\Drv\uart4 -I.\code\system -I.\code\app -I.\code\WiFiToCloud -I.\code\Drv\ADC_NumCal -I.\code\Drv\ultrasonic -I.\code\Drv\SegLED-I D:\WorkSpace\CloudSafeBox\project\软件代码\RTE-I D:\Keli\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I D:\Keli\ARM\CMSIS\Include-D__UVISION_VERSION="513" -DARMCM3 -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -D__FreeBSD__ -DDEBUG_BOOT="0" -DDEBUG_SHELL="0"-o .\obj\light.o --omf_browse .\obj\light.crf --depend .\obj\light.d)
-I (code\Drv\SegLED\light.h)(0x5BA092B1)
+F (.\code\Drv\USART\hal_usart1.c)(0x5BA2030A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I..\..\Libraries\inc -I.\code\Bsp -I.\code\Drv\LCD12864 -I.\code\Drv\keyboard -I.\code\Drv\TIM\PWM_Output -I..\..\Libraries -I.\code\Drv\ADC1_DMA -I.\code\Drv\lf125k -I.\code\Drv\eeprom -I.\code\Drv\ultrasonic -I.\code\Drv\RTC -I.\code\Drv\SysTick -I.\code\Drv\USART -I.\code\Drv\TIM\timer -I.\code\Drv\SegLED -I.\code\Drv\Buzzer -I.\code\Drv\IR_Alert -I.\code\Drv\Door -I.\code\Drv\uart4 -I.\code\system -I.\code\app -I.\code\WiFiToCloud -I.\code\Drv\ADC_NumCal -I.\code\Drv\ultrasonic -I.\code\Drv\SegLED-I D:\WorkSpace\CloudSafeBox\project\软件代码\RTE-I D:\Keli\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I D:\Keli\ARM\CMSIS\Include-D__UVISION_VERSION="513" -DARMCM3 -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -D__FreeBSD__ -DDEBUG_BOOT="0" -DDEBUG_SHELL="0"-o .\obj\hal_usart1.o --omf_browse .\obj\hal_usart1.crf --depend .\obj\hal_usart1.d)
+I (code\Drv\USART\hal_usart1.h)(0x5BA202C3)
 I (..\..\Libraries\stm32f10x.h)(0x557E2FDA)
 I (..\..\Libraries\core_cm3.h)(0x557E2FDA)
 I (D:\Keli\ARM\ARMCC\include\stdint.h)(0x5475F300)
@@ -703,38 +334,6 @@ I (..\..\Libraries\inc\stm32f10x_tim.h)(0x557E2FDA)
 I (..\..\Libraries\inc\stm32f10x_usart.h)(0x557E2FDA)
 I (..\..\Libraries\inc\stm32f10x_wwdg.h)(0x557E2FDA)
 I (..\..\Libraries\inc\misc.h)(0x557E2FDA)
-F (.\code\Bsp\My_InitTask.c)(0x5BA0C440)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I..\..\Libraries\inc -I.\code\Bsp -I.\code\Drv\LCD12864 -I.\code\Drv\keyboard -I.\code\Drv\TIM\PWM_Output -I..\..\Libraries -I.\code\Drv\ADC1_DMA -I.\code\Drv\lf125k -I.\code\Drv\eeprom -I.\code\Drv\ultrasonic -I.\code\Drv\RTC -I.\code\Drv\SysTick -I.\code\Drv\USART -I.\code\Drv\TIM\timer -I.\code\Drv\SegLED -I.\code\Drv\Buzzer -I.\code\Drv\IR_Alert -I.\code\Drv\Door -I.\code\Drv\uart4 -I.\code\system -I.\code\app -I.\code\WiFiToCloud -I.\code\Drv\ADC_NumCal -I.\code\Drv\ultrasonic -I.\code\Drv\SegLED-I D:\WorkSpace\CloudSafeBox\project\软件代码\RTE-I D:\Keli\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I D:\Keli\ARM\CMSIS\Include-D__UVISION_VERSION="513" -DARMCM3 -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -D__FreeBSD__ -DDEBUG_BOOT="0" -DDEBUG_SHELL="0"-o .\obj\my_inittask.o --omf_browse .\obj\my_inittask.crf --depend .\obj\my_inittask.d)
-I (..\..\Libraries\stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\core_cm3.h)(0x557E2FDA)
-I (D:\Keli\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (..\..\Libraries\system_stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\stm32f10x_conf.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_adc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\../stm32f10x.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_bkp.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_can.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_cec.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_crc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dac.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dbgmcu.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_dma.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_exti.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_flash.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_fsmc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_gpio.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_i2c.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_iwdg.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_pwr.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_rcc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_rtc.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_sdio.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_spi.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_tim.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_usart.h)(0x557E2FDA)
-I (..\..\Libraries\inc\stm32f10x_wwdg.h)(0x557E2FDA)
-I (..\..\Libraries\inc\misc.h)(0x557E2FDA)
-I (.\code\Drv\SysTick\systick.h)(0x5B231414)
-I (.\code\Drv\USART\usart.h)(0x5BA07303)
 I (D:\Keli\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (D:\Keli\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (D:\Keli\ARM\ARMCC\include\stdarg.h)(0x5475F2FA)
@@ -743,19 +342,82 @@ I (.\code\Drv\TIM\PWM_Output\pwm_output.h)(0x5B231414)
 I (.\code\Drv\Door\door.h)(0x5B9FA429)
 I (.\code\Drv\Buzzer\buzzer.h)(0x5B231412)
 I (.\code\Drv\LCD12864\LCD12864.h)(0x5B231413)
-I (.\code\Drv\SegLED\light.h)(0x5BA092B1)
-I (.\code\Drv\keyboard\keyboard_drv.h)(0x5B231413)
-I (.\code\Drv\ADC1_DMA\adc.h)(0x5B95F12E)
-I (.\code\Drv\lf125k\lf125k.h)(0x5B231413)
-I (.\code\Drv\eeprom\eeprom.h)(0x5B2A13AE)
-I (.\code\Drv\ultrasonic\ultrasonic.h)(0x5B97B90B)
-I (.\code\Drv\RTC\rtc.h)(0x5B231413)
-I (.\code\Drv\SegLED\SegLed_16bit.h)(0x5B231414)
-I (.\code\Drv\TIM\timer\timer.h)(0x5BA0CD6C)
-I (.\code\Drv\uart4\hal_uart4.h)(0x5B231414)
-I (.\code\WiFiToCloud\WiFiToCloud.h)(0x5B2C5AD2)
-I (.\code\WiFiToCloud\HAL_WiFiToCloud.h)(0x5B2B146D)
-I (.\code\WiFiToCloud\CloudReference.h)(0x5B98D855)
+I (.\code\Drv\SegLED\light.h)(0x5BA1D414)
+I (.\code\Drv\ADC1_DMA\adc_dma.h)(0x5BA1B0CE)
+I (.\code\Drv\ADC_NumCal\numcal.h)(0x5B9F96E8)
+I (D:\Keli\ARM\ARMCC\include\math.h)(0x5475F2FE)
+F (.\code\Drv\ADC1_DMA\adc_dma.c)(0x5BA1B0CE)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I..\..\Libraries\inc -I.\code\Bsp -I.\code\Drv\LCD12864 -I.\code\Drv\keyboard -I.\code\Drv\TIM\PWM_Output -I..\..\Libraries -I.\code\Drv\ADC1_DMA -I.\code\Drv\lf125k -I.\code\Drv\eeprom -I.\code\Drv\ultrasonic -I.\code\Drv\RTC -I.\code\Drv\SysTick -I.\code\Drv\USART -I.\code\Drv\TIM\timer -I.\code\Drv\SegLED -I.\code\Drv\Buzzer -I.\code\Drv\IR_Alert -I.\code\Drv\Door -I.\code\Drv\uart4 -I.\code\system -I.\code\app -I.\code\WiFiToCloud -I.\code\Drv\ADC_NumCal -I.\code\Drv\ultrasonic -I.\code\Drv\SegLED-I D:\WorkSpace\CloudSafeBox\project\软件代码\RTE-I D:\Keli\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I D:\Keli\ARM\CMSIS\Include-D__UVISION_VERSION="513" -DARMCM3 -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -D__FreeBSD__ -DDEBUG_BOOT="0" -DDEBUG_SHELL="0"-o .\obj\adc_dma.o --omf_browse .\obj\adc_dma.crf --depend .\obj\adc_dma.d)
+I (code\Drv\ADC1_DMA\adc_dma.h)(0x5BA1B0CE)
+I (..\..\Libraries\stm32f10x.h)(0x557E2FDA)
+I (..\..\Libraries\core_cm3.h)(0x557E2FDA)
+I (D:\Keli\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\..\Libraries\system_stm32f10x.h)(0x557E2FDA)
+I (..\..\Libraries\stm32f10x_conf.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_adc.h)(0x557E2FDA)
+I (..\..\Libraries\inc\../stm32f10x.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_bkp.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_can.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_cec.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_crc.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_dac.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_dbgmcu.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_dma.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_exti.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_flash.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_fsmc.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_gpio.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_i2c.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_iwdg.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_pwr.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_rcc.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_rtc.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_sdio.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_spi.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_tim.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_usart.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_wwdg.h)(0x557E2FDA)
+I (..\..\Libraries\inc\misc.h)(0x557E2FDA)
+F (.\code\Drv\TIM\timer\timer.c)(0x5BA1FAED)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I..\..\Libraries\inc -I.\code\Bsp -I.\code\Drv\LCD12864 -I.\code\Drv\keyboard -I.\code\Drv\TIM\PWM_Output -I..\..\Libraries -I.\code\Drv\ADC1_DMA -I.\code\Drv\lf125k -I.\code\Drv\eeprom -I.\code\Drv\ultrasonic -I.\code\Drv\RTC -I.\code\Drv\SysTick -I.\code\Drv\USART -I.\code\Drv\TIM\timer -I.\code\Drv\SegLED -I.\code\Drv\Buzzer -I.\code\Drv\IR_Alert -I.\code\Drv\Door -I.\code\Drv\uart4 -I.\code\system -I.\code\app -I.\code\WiFiToCloud -I.\code\Drv\ADC_NumCal -I.\code\Drv\ultrasonic -I.\code\Drv\SegLED-I D:\WorkSpace\CloudSafeBox\project\软件代码\RTE-I D:\Keli\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I D:\Keli\ARM\CMSIS\Include-D__UVISION_VERSION="513" -DARMCM3 -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -D__FreeBSD__ -DDEBUG_BOOT="0" -DDEBUG_SHELL="0"-o .\obj\timer.o --omf_browse .\obj\timer.crf --depend .\obj\timer.d)
+I (code\Drv\TIM\timer\timer.h)(0x5BA1E56B)
+I (.\code\Drv\SegLED\light.h)(0x5BA1D414)
+I (..\..\Libraries\stm32f10x.h)(0x557E2FDA)
+I (..\..\Libraries\core_cm3.h)(0x557E2FDA)
+I (D:\Keli\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\..\Libraries\system_stm32f10x.h)(0x557E2FDA)
+I (..\..\Libraries\stm32f10x_conf.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_adc.h)(0x557E2FDA)
+I (..\..\Libraries\inc\../stm32f10x.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_bkp.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_can.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_cec.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_crc.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_dac.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_dbgmcu.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_dma.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_exti.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_flash.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_fsmc.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_gpio.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_i2c.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_iwdg.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_pwr.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_rcc.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_rtc.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_sdio.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_spi.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_tim.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_usart.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_wwdg.h)(0x557E2FDA)
+I (..\..\Libraries\inc\misc.h)(0x557E2FDA)
+I (.\code\Drv\USART\hal_usart1.h)(0x5BA202C3)
+I (D:\Keli\ARM\ARMCC\include\stdio.h)(0x5475F300)
+I (D:\Keli\ARM\ARMCC\include\stdlib.h)(0x5475F300)
+I (D:\Keli\ARM\ARMCC\include\stdarg.h)(0x5475F2FA)
+I (D:\Keli\ARM\ARMCC\include\string.h)(0x5475F300)
+I (.\code\Drv\TIM\PWM_Output\pwm_output.h)(0x5B231414)
+I (.\code\Drv\Door\door.h)(0x5B9FA429)
+I (.\code\Drv\Buzzer\buzzer.h)(0x5B231412)
+I (.\code\Drv\LCD12864\LCD12864.h)(0x5B231413)
 F (.\code\stm32f10x_it.c)(0x5B231415)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I..\..\Libraries\inc -I.\code\Bsp -I.\code\Drv\LCD12864 -I.\code\Drv\keyboard -I.\code\Drv\TIM\PWM_Output -I..\..\Libraries -I.\code\Drv\ADC1_DMA -I.\code\Drv\lf125k -I.\code\Drv\eeprom -I.\code\Drv\ultrasonic -I.\code\Drv\RTC -I.\code\Drv\SysTick -I.\code\Drv\USART -I.\code\Drv\TIM\timer -I.\code\Drv\SegLED -I.\code\Drv\Buzzer -I.\code\Drv\IR_Alert -I.\code\Drv\Door -I.\code\Drv\uart4 -I.\code\system -I.\code\app -I.\code\WiFiToCloud -I.\code\Drv\ADC_NumCal -I.\code\Drv\ultrasonic -I.\code\Drv\SegLED-I D:\WorkSpace\CloudSafeBox\project\软件代码\RTE-I D:\Keli\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I D:\Keli\ARM\CMSIS\Include-D__UVISION_VERSION="513" -DARMCM3 -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -D__FreeBSD__ -DDEBUG_BOOT="0" -DDEBUG_SHELL="0"-o .\obj\stm32f10x_it.o --omf_browse .\obj\stm32f10x_it.crf --depend .\obj\stm32f10x_it.d)
 I (D:\Keli\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (..\..\Libraries\stm32f10x.h)(0x557E2FDA)
@@ -820,6 +482,50 @@ I (..\..\Libraries\inc\stm32f10x_wwdg.h)(0x557E2FDA)
 I (..\..\Libraries\inc\misc.h)(0x557E2FDA)
 I (D:\Keli\ARM\ARMCC\include\string.h)(0x5475F300)
 I (D:\Keli\ARM\ARMCC\include\stdio.h)(0x5475F300)
+F (.\code\Bsp\task.c)(0x5BA1FAE0)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I..\..\Libraries\inc -I.\code\Bsp -I.\code\Drv\LCD12864 -I.\code\Drv\keyboard -I.\code\Drv\TIM\PWM_Output -I..\..\Libraries -I.\code\Drv\ADC1_DMA -I.\code\Drv\lf125k -I.\code\Drv\eeprom -I.\code\Drv\ultrasonic -I.\code\Drv\RTC -I.\code\Drv\SysTick -I.\code\Drv\USART -I.\code\Drv\TIM\timer -I.\code\Drv\SegLED -I.\code\Drv\Buzzer -I.\code\Drv\IR_Alert -I.\code\Drv\Door -I.\code\Drv\uart4 -I.\code\system -I.\code\app -I.\code\WiFiToCloud -I.\code\Drv\ADC_NumCal -I.\code\Drv\ultrasonic -I.\code\Drv\SegLED-I D:\WorkSpace\CloudSafeBox\project\软件代码\RTE-I D:\Keli\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I D:\Keli\ARM\CMSIS\Include-D__UVISION_VERSION="513" -DARMCM3 -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -D__FreeBSD__ -DDEBUG_BOOT="0" -DDEBUG_SHELL="0"-o .\obj\task.o --omf_browse .\obj\task.crf --depend .\obj\task.d)
+I (code\Bsp\task.h)(0x5BA1A7AC)
+I (..\..\Libraries\stm32f10x.h)(0x557E2FDA)
+I (..\..\Libraries\core_cm3.h)(0x557E2FDA)
+I (D:\Keli\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\..\Libraries\system_stm32f10x.h)(0x557E2FDA)
+I (..\..\Libraries\stm32f10x_conf.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_adc.h)(0x557E2FDA)
+I (..\..\Libraries\inc\../stm32f10x.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_bkp.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_can.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_cec.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_crc.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_dac.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_dbgmcu.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_dma.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_exti.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_flash.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_fsmc.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_gpio.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_i2c.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_iwdg.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_pwr.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_rcc.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_rtc.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_sdio.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_spi.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_tim.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_usart.h)(0x557E2FDA)
+I (..\..\Libraries\inc\stm32f10x_wwdg.h)(0x557E2FDA)
+I (..\..\Libraries\inc\misc.h)(0x557E2FDA)
+I (.\code\Drv\SegLED\light.h)(0x5BA1D414)
+I (.\code\Drv\USART\hal_usart1.h)(0x5BA202C3)
+I (D:\Keli\ARM\ARMCC\include\stdio.h)(0x5475F300)
+I (D:\Keli\ARM\ARMCC\include\stdlib.h)(0x5475F300)
+I (D:\Keli\ARM\ARMCC\include\stdarg.h)(0x5475F2FA)
+I (D:\Keli\ARM\ARMCC\include\string.h)(0x5475F300)
+I (.\code\Drv\TIM\PWM_Output\pwm_output.h)(0x5B231414)
+I (.\code\Drv\Door\door.h)(0x5B9FA429)
+I (.\code\Drv\Buzzer\buzzer.h)(0x5B231412)
+I (.\code\Drv\LCD12864\LCD12864.h)(0x5B231413)
+I (.\code\Drv\TIM\timer\timer.h)(0x5BA1E56B)
+I (.\code\Drv\SysTick\systick.h)(0x5B231414)
+I (.\code\Drv\ADC1_DMA\adc_dma.h)(0x5BA1B0CE)
 F (..\..\Libraries\src\misc.c)(0x557E2FDA)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I..\..\Libraries\inc -I.\code\Bsp -I.\code\Drv\LCD12864 -I.\code\Drv\keyboard -I.\code\Drv\TIM\PWM_Output -I..\..\Libraries -I.\code\Drv\ADC1_DMA -I.\code\Drv\lf125k -I.\code\Drv\eeprom -I.\code\Drv\ultrasonic -I.\code\Drv\RTC -I.\code\Drv\SysTick -I.\code\Drv\USART -I.\code\Drv\TIM\timer -I.\code\Drv\SegLED -I.\code\Drv\Buzzer -I.\code\Drv\IR_Alert -I.\code\Drv\Door -I.\code\Drv\uart4 -I.\code\system -I.\code\app -I.\code\WiFiToCloud -I.\code\Drv\ADC_NumCal -I.\code\Drv\ultrasonic -I.\code\Drv\SegLED-I D:\WorkSpace\CloudSafeBox\project\软件代码\RTE-I D:\Keli\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I D:\Keli\ARM\CMSIS\Include-D__UVISION_VERSION="513" -DARMCM3 -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -D__FreeBSD__ -DDEBUG_BOOT="0" -DDEBUG_SHELL="0"-o .\obj\misc.o --omf_browse .\obj\misc.crf --depend .\obj\misc.d)
 I (..\..\Libraries\src\../inc/misc.h)(0x557E2FDA)
 I (..\..\Libraries\src\../inc/../stm32f10x.h)(0x557E2FDA)

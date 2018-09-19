@@ -365,7 +365,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,STM32F10X_HD,__FreeBSD__,DEBUG_BOOT=0,DEBUG_SHELL=0</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\Libraries\inc;.\code\Bsp;.\code\Drv\LCD12864;.\code\Drv\keyboard;.\code\Drv\TIM\PWM_Output;..\..\Libraries;.\code\Drv\ADC1_DMA;.\code\Drv\lf125k;.\code\Drv\eeprom;.\code\Drv\ultrasonic;.\code\Drv\RTC;.\code\Drv\SysTick;.\code\Drv\USART;.\code\Drv\TIM\timer;.\code\Drv\SegLED;.\code\Drv\Buzzer;.\code\Drv\IR_Alert;.\code\Drv\Door;.\code\Drv\uart4;.\code\system;.\code\app;.\code\WiFiToCloud;.\code\Drv\ADC_NumCal;.\code\Drv\ultrasonic</IncludePath>
+              <IncludePath>..\..\Libraries\inc;.\code\Bsp;.\code\Drv\LCD12864;.\code\Drv\keyboard;.\code\Drv\TIM\PWM_Output;..\..\Libraries;.\code\Drv\ADC1_DMA;.\code\Drv\lf125k;.\code\Drv\eeprom;.\code\Drv\ultrasonic;.\code\Drv\RTC;.\code\Drv\SysTick;.\code\Drv\USART;.\code\Drv\TIM\timer;.\code\Drv\SegLED;.\code\Drv\Buzzer;.\code\Drv\IR_Alert;.\code\Drv\Door;.\code\Drv\uart4;.\code\system;.\code\app;.\code\WiFiToCloud;.\code\Drv\ADC_NumCal;.\code\Drv\ultrasonic;.\code\Drv\SegLED</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -494,11 +494,6 @@
               <FilePath>.\code\Drv\uart4\hal_uart4.c</FilePath>
             </File>
             <File>
-              <FileName>hal_timer2.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\code\Drv\TIM\timer\hal_timer2.c</FilePath>
-            </File>
-            <File>
               <FileName>eeprom_flash.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\code\Drv\eeprom\eeprom_flash.c</FilePath>
@@ -512,6 +507,16 @@
               <FileName>pwm_output.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\code\Drv\TIM\PWM_Output\pwm_output.c</FilePath>
+            </File>
+            <File>
+              <FileName>timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\code\Drv\TIM\timer\timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>light.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\code\Drv\SegLED\light.c</FilePath>
             </File>
           </Files>
         </Group>

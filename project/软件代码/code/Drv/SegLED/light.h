@@ -7,7 +7,7 @@
 #define LIGHT_PORT GPIOD
 #define LIGHT_PIN GPIO_Pin_12
 
-void lightInit(void);
+void light_init(void);
 void lightOpen(void);
 void lightClose(void);
 

@@ -1,6 +1,6 @@
 #include "light.h"
 
-void lightInit(void)
+void light_init(void)
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
 
