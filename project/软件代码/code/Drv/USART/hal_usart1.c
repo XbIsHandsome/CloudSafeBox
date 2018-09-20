@@ -9,6 +9,7 @@ unsigned char isAlert;//报警标志
 extern uint8_t MEMS_ALERT;
 
 u8 flag_frame = 0;
+Usart_Cmd usart_cmd;
 
 /* ==================================================================
 #     函数介绍: 串口1时钟初始化函数									#
@@ -251,18 +252,14 @@ int usart1_get_str(char* data)
 #     作    者: 许     兵											#
 #     修改时间: 2018-9-17											#
 ================================================================== */
-char *get_json_value(char *cJson, char *Tag)
+char *get_single_json_value(char *cJson, char *Tag)
 {
 	char *target = NULL;
-	static char temp[10];
+	static char temp[20];
 	int8_t i=0;
 	
 	memset(temp, 0x00, 128);
-	if(strstr((const char *)Tag, (const char *)"data") != NULL)
-	{
-		sprintf(temp,"\"%s\":\"",Tag);
-	}
-	
+	sprintf(temp,"\"%s\":\"",Tag);
 	target=strstr((const char *)cJson, (const char *)temp);
 	if(target == NULL)
 	{
@@ -272,7 +269,7 @@ char *get_json_value(char *cJson, char *Tag)
 	i=strlen((const char *)temp);
 	target=target+i;
 	memset(temp, 0x00, 128);
-	for(i=0; i<10; i++, target++)//数值超过10个位为非法，由于2^32=4294967296
+	for(i=0; i<20; i++, target++)//数值超过10个位为非法，由于2^32=4294967296
 	{
 		if(*target == '\"')
 		{
@@ -282,9 +279,47 @@ char *get_json_value(char *cJson, char *Tag)
 		
 	}
 	temp[i+1] = '\0';
-	printf("数值=%s\r\n",temp);
+	//printf("数值=%s\r\n",temp);
 	return (char *)temp;
 }
+
+/* ==================================================================
+#     函数介绍: 将json格式中的目标对象Tag对应的值字符串转换为数值   #
+#     参    数:	*cJson : json字符串									#
+#				*Tag   : 要操作的对象标签							#
+#     返 回 值: 返回数值的字符串形式的启始地址						#
+#     作    者: 许     兵											#
+#     修改时间: 2018-9-17											#
+================================================================== */
+char *get_multiple_json_value(char *cJson)
+{
+	static char temp[10];
+	int data_temp = 0;
+	
+	if(strstr((const char *)cJson, (const char *)"SOURCE") != NULL)
+	{
+		usart_cmd.SOURCE = get_single_json_value((char *)cJson, (char *)"SOURCE");
+		printf("usart_cmd.SOURCE=%s\r\n", usart_cmd.SOURCE);
+	}
+	if(strstr((const char *)cJson, (const char *)"CMD_TYPE") != NULL)
+	{
+		usart_cmd.CMD_TYPE = get_single_json_value((char *)cJson, (char *)"CMD_TYPE");
+		printf("usart_cmd.CMD_TYPE=%s\r\n", usart_cmd.CMD_TYPE);
+	}
+	if(strstr((const char *)cJson, (const char *)"ELEMENT") != NULL)
+	{
+		usart_cmd.ELEMENT = get_single_json_value((char *)cJson, (char *)"ELEMENT");
+		printf("usart_cmd.ELEMENT=%s\r\n", usart_cmd.ELEMENT);
+	}
+	if(strstr((const char *)cJson, (const char *)"DATA") != NULL)
+	{
+		data_temp = atoi(get_single_json_value((char *)cJson, (char *)"DATA"));
+		usart_cmd.DATA = data_temp;
+		printf("usart_cmd.DATA=%d\r\n", usart_cmd.DATA);
+	}
+
+}
+
 
 /* ==================================================================
 #     函数介绍: 解析串口命令并进行相对应的操作					    #
@@ -299,50 +334,48 @@ void usart_data_analysis_process(char *RxBuf)
 	usart1_send_str((char *)"解析串口命令\r\n");
 	char *servo_degree = NULL;
 	uint8_t TxetBuf[128];
+	get_multiple_json_value((char *)RxBuf);
 	
-	if(strstr((const char *)RxBuf, (const char *)"\"t\":5") != NULL)//命令请求？
+	if(strstr(usart_cmd.CMD_TYPE,"5") != NULL)//命令请求？
 	{
-			if(strstr((const char *)RxBuf, (const char *)"\"cmdtag\":\"defense\"") != NULL)//布防/撤防请求
+		if(strstr(usart_cmd.ELEMENT,"defense") != NULL)//布防/撤防请求
+		{
+			memset(TxetBuf,0x00,128);//清空缓存
+			if(usart_cmd.DATA == 1)
 			{
-				memset(TxetBuf,0x00,128);//清空缓存
-				if((strstr((const char *)RxBuf, (const char *)"\"data\":\"1\"") != NULL))
-				{
-					FlagDefense=1;
-				}
-				else
-				{
-					usart1_send_str("撤防\r\n");
-					FlagDefense=0;
-					buzzerClose();
-					lightClose();
-					//lcd_clr_row(2);
-					//lcd_clr_row(3);
-				}
+				FlagDefense=1;
 			}
-			else if(strstr((const char *)RxBuf, (const char *)"\"cmdtag\":\"ctrl\"") != NULL)//开锁/关锁请求
+			else if(usart_cmd.DATA == 0)
 			{
-				memset(TxetBuf,0x00,128);//清空缓存
-				if((strstr((const char *)RxBuf, (const char *)"\"data\":\"1\"") != NULL))//开锁
-				{
-					isAlert=0;//清除警告
-					doorOpen();
-				}
-				else if((strstr((const char *)RxBuf, (const char *)"\"data\":0") != NULL))//关锁
-				{
-					isAlert=0;
-				}
+				usart1_send_str("撤防\r\n");
+				FlagDefense=0;
+				buzzerClose();
+				lightClose();
+				//lcd_clr_row(2);
+				//lcd_clr_row(3);
 			}
-			else if(strstr((const char *)RxBuf, (const char *)"\"cmdtag\":\"servo_vertical\"") != NULL)//开锁/关锁请求
+		}
+		else if(strstr(usart_cmd.ELEMENT,"ctrl") != NULL)//开锁/关锁请求
+		{
+			memset(TxetBuf,0x00,128);//清空缓存
+			if(usart_cmd.DATA == 1)//开锁
 			{
-				servo_degree = get_json_value((char *)RxBuf, (char *)"data");
-				//TIM3_CH1_set_servo_degree(atoi(servo_degree));
+				isAlert=0;//清除警告
+				doorOpen();
 			}
-			else if(strstr((const char *)RxBuf, (const char *)"\"cmdtag\":\"servo_horizontal\"") != NULL)//开锁/关锁请求
+			else if(usart_cmd.DATA == 0)//关锁
 			{
-				//usart1_send_str("asdasda");
-				servo_degree = get_json_value((char *)RxBuf, (char *)"data");
-				//TIM3_CH2_set_servo_degree(atoi(servo_degree));
+				isAlert=0;
 			}
+		}
+		else if(strstr(usart_cmd.ELEMENT,"servo_vertical") != NULL)//开锁/关锁请求
+		{
+			//TIM3_CH1_set_servo_degree(usart_cmd.DATA);
+		}
+		else if(strstr(usart_cmd.ELEMENT,"servo_horizontal") != NULL)//开锁/关锁请求
+		{
+			//TIM3_CH2_set_servo_degree(usart_cmd.DATA);
+		}
 		
 	}
 }
@@ -463,6 +496,6 @@ void usart1_action(char* buf, u8 len)
 {
 	//char *usart_temp;
 	//sprintf(usart_temp, "%s", buf);
-	usart1_send_str(buf);
+	//usart1_send_str(buf);
 	usart_data_analysis_process(buf);
 }

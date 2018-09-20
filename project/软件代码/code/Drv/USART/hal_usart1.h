@@ -16,6 +16,14 @@
 #define USART1_FIFO_BUF_SIZE			128 //it must be pow(2, x) result 
 #define USART1_FIFO_BUF_SIZE_MASK		(USART1_FIFO_BUF_SIZE-1)
 
+typedef struct 
+{
+	char* SOURCE;
+	char* CMD_TYPE;
+	char* ELEMENT;
+	int DATA;
+}Usart_Cmd;
+
 void USART1_init(void);
 unsigned int usart1_rx_fifo_len(void);
 unsigned char usart1_rx_fifo_is_empty(void);

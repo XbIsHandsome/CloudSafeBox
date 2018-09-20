@@ -424,36 +424,6 @@
           <GroupName>Drv</GroupName>
           <Files>
             <File>
-              <FileName>LCD12864.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\code\Drv\LCD12864\LCD12864.c</FilePath>
-            </File>
-            <File>
-              <FileName>keyboard_drv.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\code\Drv\keyboard\keyboard_drv.c</FilePath>
-            </File>
-            <File>
-              <FileName>adc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\code\Drv\ADC1_DMA\adc.c</FilePath>
-            </File>
-            <File>
-              <FileName>eeprom.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\code\Drv\eeprom\eeprom.c</FilePath>
-            </File>
-            <File>
-              <FileName>lf125k.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\code\Drv\lf125k\lf125k.c</FilePath>
-            </File>
-            <File>
-              <FileName>ultrasonic.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\code\Drv\ultrasonic\ultrasonic.c</FilePath>
-            </File>
-            <File>
               <FileName>rtc.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\code\Drv\RTC\rtc.c</FilePath>
@@ -462,16 +432,6 @@
               <FileName>systick.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\code\Drv\SysTick\systick.c</FilePath>
-            </File>
-            <File>
-              <FileName>usart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\code\Drv\USART\usart.c</FilePath>
-            </File>
-            <File>
-              <FileName>SegLED_16bit.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\code\Drv\SegLED\SegLED_16bit.c</FilePath>
             </File>
             <File>
               <FileName>buzzer.c</FileName>
@@ -494,40 +454,35 @@
               <FilePath>.\code\Drv\uart4\hal_uart4.c</FilePath>
             </File>
             <File>
-              <FileName>eeprom_flash.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\code\Drv\eeprom\eeprom_flash.c</FilePath>
-            </File>
-            <File>
               <FileName>numcal.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\code\Drv\ADC_NumCal\numcal.c</FilePath>
-            </File>
-            <File>
-              <FileName>pwm_output.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\code\Drv\TIM\PWM_Output\pwm_output.c</FilePath>
-            </File>
-            <File>
-              <FileName>timer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\code\Drv\TIM\timer\timer.c</FilePath>
             </File>
             <File>
               <FileName>light.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\code\Drv\SegLED\light.c</FilePath>
             </File>
+            <File>
+              <FileName>hal_usart1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\code\Drv\USART\hal_usart1.c</FilePath>
+            </File>
+            <File>
+              <FileName>adc_dma.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\code\Drv\ADC1_DMA\adc_dma.c</FilePath>
+            </File>
+            <File>
+              <FileName>timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\code\Drv\TIM\timer\timer.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>Bsp</GroupName>
           <Files>
-            <File>
-              <FileName>My_InitTask.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\code\Bsp\My_InitTask.c</FilePath>
-            </File>
             <File>
               <FileName>stm32f10x_it.c</FileName>
               <FileType>1</FileType>
@@ -537,6 +492,11 @@
               <FileName>bsp_flash.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\code\Bsp\bsp_flash.c</FilePath>
+            </File>
+            <File>
+              <FileName>task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\code\Bsp\task.c</FilePath>
             </File>
           </Files>
         </Group>
