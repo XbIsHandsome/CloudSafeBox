@@ -38,6 +38,7 @@
 .\obj\hal_usart1.o: .\code\Drv\Buzzer\buzzer.h
 .\obj\hal_usart1.o: .\code\Drv\LCD12864\LCD12864.h
 .\obj\hal_usart1.o: .\code\Drv\SegLED\light.h
+.\obj\hal_usart1.o: .\code\WiFiToCloud\cJSON.h
 .\obj\hal_usart1.o: .\code\Drv\ADC1_DMA\adc_dma.h
 .\obj\hal_usart1.o: .\code\Drv\ADC_NumCal\numcal.h
 .\obj\hal_usart1.o: D:\Keli\ARM\ARMCC\Bin\..\include\math.h

@@ -1,9 +1,10 @@
 .\obj\wifitocloud.o: code\WiFiToCloud\WiFiToCloud.c
+.\obj\wifitocloud.o: code\WiFiToCloud\WiFiToCloud.h
 .\obj\wifitocloud.o: D:\Keli\ARM\ARMCC\Bin\..\include\stdio.h
+.\obj\wifitocloud.o: D:\Keli\ARM\ARMCC\Bin\..\include\stdlib.h
+.\obj\wifitocloud.o: D:\Keli\ARM\ARMCC\Bin\..\include\stdarg.h
 .\obj\wifitocloud.o: D:\Keli\ARM\ARMCC\Bin\..\include\string.h
 .\obj\wifitocloud.o: D:\Keli\ARM\ARMCC\Bin\..\include\stdint.h
-.\obj\wifitocloud.o: .\code\Drv\SysTick\systick.h
-.\obj\wifitocloud.o: code\WiFiToCloud\WiFiToCloud.h
 .\obj\wifitocloud.o: code\WiFiToCloud\HAL_WiFiToCloud.h
 .\obj\wifitocloud.o: .\code\Drv\uart4\hal_uart4.h
 .\obj\wifitocloud.o: .\code\Bsp\..\..\..\..\Libraries\stm32f10x.h
@@ -36,3 +37,10 @@
 .\obj\wifitocloud.o: .\code\Bsp\..\..\..\..\Libraries\inc\misc.h
 .\obj\wifitocloud.o: code\WiFiToCloud\WiFiToCloud.h
 .\obj\wifitocloud.o: code\WiFiToCloud\CloudReference.h
+.\obj\wifitocloud.o: .\code\Drv\SysTick\systick.h
+.\obj\wifitocloud.o: .\code\Drv\Buzzer\buzzer.h
+.\obj\wifitocloud.o: .\code\Drv\SegLED\light.h
+.\obj\wifitocloud.o: .\code\Drv\LCD12864\LCD12864.h
+.\obj\wifitocloud.o: .\code\Drv\Door\door.h
+.\obj\wifitocloud.o: .\code\Drv\TIM\PWM_Output\pwm_output.h
+.\obj\wifitocloud.o: code\WiFiToCloud\cJSON.h

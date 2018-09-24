@@ -22,22 +22,24 @@ Dialog DLL:      TCM.DLL V1.14.4.0
  
 <h2>Project:</h2>
 D:\WorkSpace\CloudSafeBox\project\软件代码\project.uvprojx
-Project File Date:  09/18/2018
+Project File Date:  09/19/2018
 
 <h2>Output:</h2>
 Build target 'STM3210E_RELEASE'
 compiling hal_usart1.c...
-code\Drv\USART\hal_usart1.c(321): warning:  #940-D: missing return statement at end of non-void function "get_multiple_json_value"
+code\Drv\USART\hal_usart1.c(322): warning:  #940-D: missing return statement at end of non-void function "get_multiple_json_value"
   }
-code\Drv\USART\hal_usart1.c(296): warning:  #177-D: variable "temp" was declared but never referenced
+code\Drv\USART\hal_usart1.c(297): warning:  #177-D: variable "temp" was declared but never referenced
         static char temp[10];
-code\Drv\USART\hal_usart1.c(335): warning:  #177-D: variable "servo_degree" was declared but never referenced
+code\Drv\USART\hal_usart1.c(335): warning:  #177-D: variable "node" was declared but never referenced
+        cJSON *node = NULL;
+code\Drv\USART\hal_usart1.c(360): warning:  #177-D: variable "servo_degree" was declared but never referenced
         char *servo_degree = NULL;
-code\Drv\USART\hal_usart1.c: 3 warnings, 0 errors
+code\Drv\USART\hal_usart1.c: 4 warnings, 0 errors
 linking...
-Program Size: Code=6908 RO-data=472 RW-data=68 ZI-data=1444  
+Program Size: Code=15552 RO-data=624 RW-data=120 ZI-data=2624  
 FromELF: creating hex file...
-".\Obj\stm32-cloudsfaebox0627-1.axf" - 0 Error(s), 3 Warning(s).
+".\Obj\stm32-cloudsfaebox0627-1.axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   D:\WorkSpace\CloudSafeBox\project\软件代码\RTE

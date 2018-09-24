@@ -41,8 +41,10 @@ uint8_t adc_nofify_rank = 0;
 
 uint32_t TimeCount=0;//系统时基
 
-//volatile unsigned char FlagDefense = 1;
-volatile unsigned char isAlert = 0;//报警标志*/
+//volatile unsigned char FlagDefense = 1;*/
+unsigned char isAlert = 0;//报警标志
+extern unsigned char FlagDefense;
+
 
 int main(void)
 {

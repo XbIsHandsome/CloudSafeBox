@@ -12,10 +12,11 @@
 #include "buzzer.h"
 #include "LCD12864.h"
 #include "light.h"
+#include "cJSON.h"
 
-#define USART1_FIFO_BUF_SIZE			128 //it must be pow(2, x) result 
+#define USART1_FIFO_BUF_SIZE			256 //it must be pow(2, x) result 
 #define USART1_FIFO_BUF_SIZE_MASK		(USART1_FIFO_BUF_SIZE-1)
-
+/*=====================串口命令结构体======================*/
 typedef struct 
 {
 	char* SOURCE;

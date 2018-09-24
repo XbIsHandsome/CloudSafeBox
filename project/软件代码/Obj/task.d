@@ -39,6 +39,8 @@
 .\obj\task.o: .\code\Drv\Door\door.h
 .\obj\task.o: .\code\Drv\Buzzer\buzzer.h
 .\obj\task.o: .\code\Drv\LCD12864\LCD12864.h
+.\obj\task.o: .\code\WiFiToCloud\cJSON.h
 .\obj\task.o: .\code\Drv\TIM\timer\timer.h
 .\obj\task.o: .\code\Drv\SysTick\systick.h
 .\obj\task.o: .\code\Drv\ADC1_DMA\adc_dma.h
+.\obj\task.o: .\code\Drv\uart4\hal_uart4.h

@@ -39,3 +39,4 @@
 .\obj\timer.o: .\code\Drv\Door\door.h
 .\obj\timer.o: .\code\Drv\Buzzer\buzzer.h
 .\obj\timer.o: .\code\Drv\LCD12864\LCD12864.h
+.\obj\timer.o: .\code\WiFiToCloud\cJSON.h

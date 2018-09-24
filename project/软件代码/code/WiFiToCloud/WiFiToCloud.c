@@ -10,16 +10,11 @@
 *
 *
 ******************************************************************************/
-#include <stdio.h>
-#include <string.h>
-#include <stdint.h>
-
-#include "systick.h"
 #include "WiFiToCloud.h"
 
-
-
-
+Cloud_Cmd cloud_cmd;
+extern unsigned char FlagDefense;
+extern unsigned char isAlert;
 /*******************************************************************
 *函数：int8_t ESP8266_SetStation(void)
 *功能：ESP8266设置为station模式
@@ -302,6 +297,79 @@ uint8_t ESP8266_GetIpData(uint8_t *AtRxBuf, char *GetIpData)
 	return (len);
 }
 
+/* ==================================================================
+#     函数介绍: 将json格式中的目标对象Tag对应的值字符串转换为数值   #
+#     参    数:	*cJson : json字符串									#
+#				*Tag   : 要操作的对象标签							#
+#     返 回 值: 返回数值的字符串形式的启始地址						#
+#     作    者: 许     兵											#
+#     修改时间: 2018-9-17											#
+================================================================== */
+char *get_single_json_value_for_cloud(char *cJson, char *Tag)
+{
+	char *target = NULL;
+	static char temp[20];
+	int8_t i=0;
+	
+	memset(temp, 0x00, 128);
+	sprintf(temp,"\"%s\":\"",Tag);
+	target=strstr((const char *)cJson, (const char *)temp);
+	if(target == NULL)
+	{
+		//printf("空字符！\r\n");
+		return NULL;
+	}
+	i=strlen((const char *)temp);
+	target=target+i;
+	memset(temp, 0x00, 128);
+	for(i=0; i<20; i++, target++)//数值超过10个位为非法，由于2^32=4294967296
+	{
+		if(*target == '\"')
+		{
+			break;
+		}
+		temp[i]=*target;
+		
+	}
+	temp[i+1] = '\0';
+	//printf("数值=%s\r\n",temp);
+	return (char *)temp;
+}
+
+/* ==================================================================
+#     函数介绍: 将json格式中的目标对象Tag对应的值字符串转换为数值   #
+#     参    数:	*cJson : json字符串									#
+#				*Tag   : 要操作的对象标签							#
+#     返 回 值: 返回数值的字符串形式的启始地址						#
+#     作    者: 许     兵											#
+#     修改时间: 2018-9-17											#
+================================================================== */
+char *get_multiple_json_value_for_cloud(char *cJson)
+{
+	static char temp[10];
+	int data_temp = 0;
+	
+	cloud_cmd.SOURCE = "pc";
+	if(strstr((const char *)cJson, (const char *)"t") != NULL)
+	{
+		cloud_cmd.CMD_TYPE = get_single_json_value_for_cloud((char *)cJson, (char *)"t");
+		//printf("cloud_cmd.CMD_TYPE=%s\r\n", cloud_cmd.CMD_TYPE);
+	}
+	if(strstr((const char *)cJson, (const char *)"apitag") != NULL)
+	{
+		cloud_cmd.ELEMENT = get_single_json_value_for_cloud((char *)cJson, (char *)"apitag");
+		//printf("cloud_cmd.ELEMENT=%s\r\n", cloud_cmd.ELEMENT);
+	}
+	if(strstr((const char *)cJson, (const char *)"data") != NULL)
+	{
+		data_temp = atoi(get_single_json_value_for_cloud((char *)cJson, (char *)"data"));
+		cloud_cmd.DATA = data_temp;
+		//printf("cloud_cmd.DATA=%d\r\n", cloud_cmd.DATA);
+	}
+
+}
+
+
 /*******************************************************************
 *函数：void ESP8266_DataAnalysisProcess(char *RxBuf)
 *功能：解析服务器数据
@@ -311,36 +379,116 @@ uint8_t ESP8266_GetIpData(uint8_t *AtRxBuf, char *GetIpData)
 *******************************************************************/
 void ESP8266_DataAnalysisProcess(char *RxBuf)
 {
-	if(strstr((const char *)RxBuf, (const char *)PING_REQ) != NULL)//心跳请求？
+	get_multiple_json_value_for_cloud((char *)RxBuf);
+	if(strstr(cloud_cmd.CMD_TYPE, (const char *)PING_REQ) != NULL)//心跳请求？
 	{
 		ESP8266_IpSend((char *)PING_RSP, strlen((const char *)PING_RSP));//响应心跳
 	}
-	else if(strstr((const char *)RxBuf, (const char *)"\"t\":5") != NULL)//命令请求？
+	else if(strstr(cloud_cmd.CMD_TYPE, (const char *)"5") != NULL)//命令请求？
 	{
-		if(strstr((const char *)RxBuf, (const char *)"\"apitag\":\"ctrl\"") != NULL)//开锁请求
+		
+		if(strstr(cloud_cmd.ELEMENT, (const char *)"ctrl") != NULL)//开锁请求
 		{
-			if((strstr((const char *)RxBuf, (const char *)"\"data\":1") != NULL))//开锁
+			if(cloud_cmd.DATA == 1)//开锁
 			{
-				ESP8266_IpSend((char *)PING_RSP, strlen((const char *)PING_RSP));//响应心跳
+				isAlert=0;//清除警告
+				doorOpen();
+			}
+			else if(cloud_cmd.DATA == 0)//关锁
+			{
+				isAlert=0;
 			}
 		}
-		else if(strstr((const char *)RxBuf, (const char *)"\"apitag\":\"defense\"") != NULL)//布防/撤防请求
+		else if(strstr(cloud_cmd.ELEMENT, (const char *)"defense") != NULL)//布防/撤防请求
 		{
-			if((strstr((const char *)RxBuf, (const char *)"\"data\":1") != NULL))//布防
+			if(cloud_cmd.DATA == 1)
 			{
-				printf("布防！\r\n");
-				;//...
-				;//...
-				;//...
+				FlagDefense=1;
 			}
-			else if((strstr((const char *)RxBuf, (const char *)"\"data\":0") != NULL))//撤防
+			else if(cloud_cmd.DATA == 0)
 			{
-				printf("撤防！\r\n");
-				;//...
-				;//...
-				;//...
+				//usart1_send_str("撤防\r\n");
+				FlagDefense=0;
+				buzzerClose();
+				lightClose();
+				lcd_clr_row(2);
+				lcd_clr_row(3);
 			}
+		}
+		else if(strstr(cloud_cmd.ELEMENT,"servo_vertical") != NULL)//开锁/关锁请求
+		{
+			TIM3_CH1_set_servo_degree(cloud_cmd.DATA);
+		}
+		else if(strstr(cloud_cmd.ELEMENT,"servo_horizontal") != NULL)//开锁/关锁请求
+		{
+			TIM3_CH2_set_servo_degree(cloud_cmd.DATA);
 		}
 	}
 }
 
+void analysis_json_value_for_cloud(char *RxBuf)
+{
+	cJSON *json = cJSON_Parse(RxBuf);
+	cJSON *node = NULL;
+	//cJOSN_GetObjectItem ??key???json?? ???????
+	cloud_cmd.SOURCE = "SERVER";
+	cloud_cmd.CMD_TYPE = cJSON_GetObjectItem(json,"t")->valuestring;
+	cloud_cmd.ELEMENT = cJSON_GetObjectItem(json,"apitag")->valuestring;
+	cloud_cmd.DATA = cJSON_GetObjectItem(json,"data")->valueint;
+}
+
+/*******************************************************************
+*函数：void ESP8266_DataAnalysisProcess(char *RxBuf)
+*功能：解析服务器数据
+*输入：char *RxBuf 服务器下发数据
+*输出：
+*特殊说明：用户可以在此基础上改造和扩展该函数，这里只是个简单的DEMO
+*******************************************************************/
+void DataAnalysisProcess(char *RxBuf)
+{
+	analysis_json_value_for_cloud(RxBuf);
+	if(strstr(cloud_cmd.CMD_TYPE, (const char *)PING_REQ) != NULL)//心跳请求？
+	{
+		ESP8266_IpSend((char *)PING_RSP, strlen((const char *)PING_RSP));//响应心跳
+	}
+	else if(strstr(cloud_cmd.CMD_TYPE, (const char *)"5") != NULL)//命令请求？
+	{
+		
+		if(strstr(cloud_cmd.ELEMENT, (const char *)"ctrl") != NULL)//开锁请求
+		{
+			if(cloud_cmd.DATA == 1)//开锁
+			{
+				isAlert=0;//清除警告
+				doorOpen();
+			}
+			else if(cloud_cmd.DATA == 0)//关锁
+			{
+				isAlert=0;
+			}
+		}
+		else if(strstr(cloud_cmd.ELEMENT, (const char *)"defense") != NULL)//布防/撤防请求
+		{
+			if(cloud_cmd.DATA == 1)
+			{
+				FlagDefense=1;
+			}
+			else if(cloud_cmd.DATA == 0)
+			{
+				//usart1_send_str("撤防\r\n");
+				FlagDefense=0;
+				buzzerClose();
+				lightClose();
+				lcd_clr_row(2);
+				lcd_clr_row(3);
+			}
+		}
+		else if(strstr(cloud_cmd.ELEMENT,"servo_vertical") != NULL)//开锁/关锁请求
+		{
+			TIM3_CH1_set_servo_degree(cloud_cmd.DATA);
+		}
+		else if(strstr(cloud_cmd.ELEMENT,"servo_horizontal") != NULL)//开锁/关锁请求
+		{
+			TIM3_CH2_set_servo_degree(cloud_cmd.DATA);
+		}
+	}
+}

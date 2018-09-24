@@ -39,5 +39,6 @@
 .\obj\main.o: .\code\Drv\Buzzer\buzzer.h
 .\obj\main.o: .\code\Drv\LCD12864\LCD12864.h
 .\obj\main.o: .\code\Drv\SegLED\light.h
+.\obj\main.o: .\code\WiFiToCloud\cJSON.h
 .\obj\main.o: .\code\Drv\TIM\timer\timer.h
 .\obj\main.o: .\code\Bsp\task.h

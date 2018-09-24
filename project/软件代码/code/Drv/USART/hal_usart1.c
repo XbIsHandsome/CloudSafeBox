@@ -5,10 +5,11 @@
 unsigned char usart1_rx_fifo_buf[USART1_FIFO_BUF_SIZE-1];
 unsigned int usart1_rx_fifo_buf_in = 0;
 unsigned int usart1_rx_fifo_buf_out = 0;
-unsigned char isAlert;//报警标志
-extern uint8_t MEMS_ALERT;
+extern unsigned char isAlert;//报警标志
+//extern uint8_t MEMS_ALERT;
 
 u8 flag_frame = 0;
+/*=====================串口命令解析结构体定义======================*/
 Usart_Cmd usart_cmd;
 
 /* ==================================================================
@@ -320,7 +321,31 @@ char *get_multiple_json_value(char *cJson)
 
 }
 
-
+/* ==================================================================
+#     函数介绍: 解析JSON数据格式的字符串，提取有效信息并将获取到的值#
+#				赋值给定好的Usart_Cmd结构体							#
+#     参    数:	*RxBuf : 串口命令，json字符串						#
+#     返 回 值:    无												#
+#     作    者: 许     兵											#
+#     修改时间: 2018-9-17											#
+================================================================== */
+void analysis_json_value(char *RxBuf)
+{
+	cJSON *json = cJSON_Parse(RxBuf);
+	cJSON *node = NULL;
+	//cJOSN_GetObjectItem ??key???json?? ???????
+	usart_cmd.SOURCE = cJSON_GetObjectItem(json,"SOURCE")->valuestring;
+	usart_cmd.CMD_TYPE = cJSON_GetObjectItem(json,"TYPE")->valuestring;
+	usart_cmd.ELEMENT = cJSON_GetObjectItem(json,"NAME")->valuestring;
+	usart_cmd.DATA = atoi(cJSON_GetObjectItem(json,"DATA")->valuestring);
+	
+	//printf("cJSON_GetObjectItem(json,\"DATA\")'s type = %d",cJSON_GetObjectItem(json,"DATA")->type);
+	usart1_rx_fifo_clean();
+	printf("usart_cmd.SOURCE = %s\r\n", usart_cmd.SOURCE);
+	printf("usart_cmd.CMD_TYPE = %s\r\n", usart_cmd.CMD_TYPE);
+	printf("usart_cmd.ELEMENT = %s\r\n", usart_cmd.ELEMENT);
+	printf("usart_cmd.DATA = %d\r\n", usart_cmd.DATA);
+}
 /* ==================================================================
 #     函数介绍: 解析串口命令并进行相对应的操作					    #
 #     参    数:	*RxBuf : 串口命令，json字符串						#
@@ -334,7 +359,7 @@ void usart_data_analysis_process(char *RxBuf)
 	usart1_send_str((char *)"解析串口命令\r\n");
 	char *servo_degree = NULL;
 	uint8_t TxetBuf[128];
-	get_multiple_json_value((char *)RxBuf);
+	analysis_json_value((char *)RxBuf);
 	
 	if(strstr(usart_cmd.CMD_TYPE,"5") != NULL)//命令请求？
 	{

@@ -5,41 +5,66 @@
 #include "timer.h"
 #include "systick.h"
 #include "adc_dma.h"
+#include "hal_uart4.h"
+
+void NVIC_Priority_Group_Configuration(void)
+{	
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+}
+
 
 int task_init(void)
 {
-    // LED灯的初始化 PC13
-    light_init();
+    NVIC_Priority_Group_Configuration();
+	
+	//PA09 PA10 UART1 protocol
+	USART1_init();
+	
+	//PC10 PC11 UART4
+	UART4_Init(115200);
+	
+	//SYSTICK
+	SYSTICK_init();
 
-    /* // 串口1的初始化 */
-    /* USART1_Configuration( 115200 ); */
-    // 串口1的初始化
-    USART1_init();
+	//CH12864C
+	lcd_init();
 
-    // 串口1的DMA初始化
-    /* USART1_DMA_Config(); */
+	//add timer2(10ms)
+	TIM2_Init();
 
-    // ADC初始化 PC1
-    ADC1_Init();
+	//keyboard init
+	//kbd_init();
+	
+	//ADC1 INIT
+	//ADC1_init(adc_update_notify);
 
-    // 定时器2的初始化
-    TIM2_Init();
+	//LF init
+	//LF125K_init();
 
-    /* USART1_WriteString("hello world!\r\n"); */
+	//i2c eeprom
+	//sEE_Init();
 
-    /* USART1_WriteString("DMA send Text!\r\n"); */
+	//rtc init
+	//rtc_init(rtc_update_notify);
+	
+	//buzzer
+	buzzerInit();
+	
+	//light
+	light_init();
+	
+	//servo
+	TIM3_pwm_init();
+	TIM3_CH1_set_servo_degree(90);
+	TIM3_CH2_set_servo_degree(90);
 
     usart1_send_str("hello world!\r\n");
-
-    /* ADC_ConvertedValueLocal =(float) ADC_ConvertedValue/4096*3.3; // 读取转换的AD值 */
 
     return 0;
 }
 
 int task_driver(void)
 {
-    /* LED_Driver();   //LED driver */
-    /* Key_Driver(); */
     usart1_driver();
 
     return 0;

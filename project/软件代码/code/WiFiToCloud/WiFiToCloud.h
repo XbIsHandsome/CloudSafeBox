@@ -13,19 +13,37 @@
 
 #ifndef _WiFiToCloud_h_
 #define _WiFiToCloud_h_
-
+//standar lib
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include <string.h>
 #include <stdint.h>
+
+//user lib
 #include "HAL_WiFiToCloud.h"
 #include "WiFiToCloud.h"
 #include "CloudReference.h"
-
-
-
-//宏定义
+#include "systick.h"
+#include "buzzer.h"
+#include "light.h"
+#include "LCD12864.h"
+#include "door.h"
+#include "pwm_output.h"
+#include "cJSON.h"
+/*=============================宏定义==============================*/
 #define AT_CWMODE	"AT+CWMODE_CUR=1" //设置为“station”模式
 
 #define PING_REQ "$#AT#\r"//心跳请求
 #define PING_RSP "$OK##\r"//心跳响应
+/*=====================串口命令解析结构体定义======================*/
+typedef struct 
+{
+	char* SOURCE;
+	char* CMD_TYPE;
+	char* ELEMENT;
+	int DATA;
+}Cloud_Cmd;
 
 /*******************************************************************
 *函数：int8_t ESP8266_SetStation(void)

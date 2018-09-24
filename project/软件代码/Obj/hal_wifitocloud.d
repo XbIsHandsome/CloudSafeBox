@@ -32,6 +32,15 @@
 .\obj\hal_wifitocloud.o: .\code\Bsp\..\..\..\..\Libraries\inc\stm32f10x_wwdg.h
 .\obj\hal_wifitocloud.o: .\code\Bsp\..\..\..\..\Libraries\inc\misc.h
 .\obj\hal_wifitocloud.o: code\WiFiToCloud\WiFiToCloud.h
+.\obj\hal_wifitocloud.o: D:\Keli\ARM\ARMCC\Bin\..\include\stdlib.h
+.\obj\hal_wifitocloud.o: D:\Keli\ARM\ARMCC\Bin\..\include\stdarg.h
 .\obj\hal_wifitocloud.o: code\WiFiToCloud\HAL_WiFiToCloud.h
 .\obj\hal_wifitocloud.o: code\WiFiToCloud\WiFiToCloud.h
 .\obj\hal_wifitocloud.o: code\WiFiToCloud\CloudReference.h
+.\obj\hal_wifitocloud.o: .\code\Drv\SysTick\systick.h
+.\obj\hal_wifitocloud.o: .\code\Drv\Buzzer\buzzer.h
+.\obj\hal_wifitocloud.o: .\code\Drv\SegLED\light.h
+.\obj\hal_wifitocloud.o: .\code\Drv\LCD12864\LCD12864.h
+.\obj\hal_wifitocloud.o: .\code\Drv\Door\door.h
+.\obj\hal_wifitocloud.o: .\code\Drv\TIM\PWM_Output\pwm_output.h
+.\obj\hal_wifitocloud.o: code\WiFiToCloud\cJSON.h
